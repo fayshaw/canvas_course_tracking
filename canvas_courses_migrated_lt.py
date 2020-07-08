@@ -69,12 +69,12 @@ canvas.__dict__
 
 # ### Get courses running on Canvas -- created via migration or by LT's
 
-# In[27]:
+# In[32]:
 
 
 #Get the LT list from the Excel sheet
 lt_df_cols = ['School', 'Dept_num', 'Dept_name', 'Name', 'Email']
-lt_df = pd.read_excel('Learning_Technologists_updating.xlsx')
+lt_df = pd.read_excel('{}/Learning_Technologists_updating.xlsx'.format(cred_file_path))
 lt_df.columns = lt_df_cols
 lt_df['Email'] = lt_df.Email.str.lower()
 lt_df.tail()

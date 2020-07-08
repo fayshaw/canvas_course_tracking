@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
+# In[22]:
 
 
+#import modules
 import pandas as pd
 import numpy as np
 import requests
@@ -13,29 +14,52 @@ from google.cloud import bigquery,storage
 from google.oauth2 import service_account
 
 import gspread
-
+import json
 from canvasapi import Canvas
 
-import plotly.express as px
-
-from instances import env_keys
-#API_KEY = env_keys['API_key']
-API_KEY = env_keys['ACCES_TOKEN']
-API_URL = env_keys['API_URL']#+'/accounts/1'
+#import plotly.express as px
 
 
-# In[3]:
+# In[31]:
 
 
+#choose credential file paths and other possible changes:
+run_mode = 'dev' #or, 'prod', or 'mig' for when migrating the code
+
+if run_mode == 'dev':
+    cred_file_path = "."
+    out_table = "all_courses2"
+elif run_mode == 'prod':
+    cred_file_path = "/home/aroy/projects/canvas_data_portal/canvas_course_tracking"
+    out_table = "all_courses"
+
+elif run_mode == 'mig':
+    cred_file_path = "/home/aroy/projects/canvas_data_portal/canvas_course_tracking"
+    out_table = "all_courses2"
+
+
+# In[25]:
+
+
+
+#get Google cloud credentials
 project_id = 'canvas-portal-data-custom'
-cred_file = 'canvas-portal-data-custom-6e244db3b826.json'
+cred_file = '{}/canvas-portal-data-custom-6e244db3b826.json'.format(cred_file_path)
 data_dl = 'data'
 scopes = [ "https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file",
             "https://spreadsheets.google.com/auth/spreadsheets"]
 credentials = service_account.Credentials.from_service_account_file(cred_file,)
 
+#get Canvas credentials
+cred_file2 = '{}/instances.json'.format(cred_file_path)
+with open(cred_file2,'r') as cred2:
+    cred_json = json.load(cred2)
 
-# In[4]:
+API_KEY = cred_json['ACCES_TOKEN']
+API_URL = cred_json['API_URL']#+'/accounts/1'
+
+
+# In[26]:
 
 
 # Initialize a new Canvas object
@@ -45,7 +69,7 @@ canvas.__dict__
 
 # ### Get courses running on Canvas -- created via migration or by LT's
 
-# In[5]:
+# In[27]:
 
 
 #Get the LT list from the Excel sheet
@@ -56,7 +80,7 @@ lt_df['Email'] = lt_df.Email.str.lower()
 lt_df.tail()
 
 
-# In[6]:
+# In[28]:
 
 
 #Read the Stellar to Canvas migration list on Google Drive, and construct a
@@ -71,7 +95,7 @@ stellar_df = pd.DataFrame(sh_data, columns=head_col)
 stellar_df['course_id'] = stellar_df['Canvas URL to migrate to'].str.split("/").str[-1]
 
 
-# In[7]:
+# In[29]:
 
 
 def get_course_info(course_id):
@@ -104,7 +128,7 @@ def get_course_info(course_id):
         return [None, None, None, None, None, None, None]
 
 
-# In[8]:
+# In[30]:
 
 
 #Get a list of all department names by the sub-account id:
@@ -192,6 +216,6 @@ all_courses_df['last_update_at'] = all_courses_df['last_update_at'].dt.strftime(
 
 
 all_courses_df[all_courses_df.if_sandbox_course==0]
-all_courses_df.to_gbq('lt_courses.all_courses2', project_id, if_exists='replace', credentials=credentials)
+all_courses_df.to_gbq('lt_courses.{}'.format(out_table), project_id, if_exists='replace', credentials=credentials)
 #all_courses_df.to_csv('all_courses.csv', index=None)
 

@@ -240,8 +240,8 @@ for user_email in lt_list[:num_lts]:
         print('Error {} for user {}'.format(e, user_email))
         pass
 
-print(all_lt_courses.shape)        
 all_lt_courses = pd.DataFrame.from_records(lt_courses_row, columns=lt_courses_cols)
+#print(all_lt_courses.shape)
 #all_lt_courses
 
 

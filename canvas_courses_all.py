@@ -20,14 +20,14 @@ from canvasapi import Canvas
 #import plotly.express as px
 
 
-# In[2]:
+# In[33]:
 
 
 #choose credential file paths and other possible changes:
 run_mode = 'dev' #or, 'prod', or 'mig' for when migrating the code
 
 
-# In[3]:
+# In[32]:
 
 
 
@@ -107,7 +107,7 @@ stellar_df['course_id'] = stellar_df['Canvas URL to migrate to'].str.split("/").
 '''
 
 
-# In[7]:
+# In[20]:
 
 
 def get_course_info(course_id):
@@ -119,6 +119,7 @@ def get_course_info(course_id):
 
         course_dept = sub_account_dict[c1.account_id]
         course_name = c1.name
+        course_state = c1.workflow_state
 
         files_ = c1.get_files()
         assn_ = c1.get_assignments()
@@ -134,13 +135,13 @@ def get_course_info(course_id):
 
 
 
-        return [c1.id, course_dept, course_name, len(file_utimes), len(assn_utimes), 
+        return [c1.id, course_dept, course_name, course_state, len(file_utimes), len(assn_utimes), 
                 len(fa_times), fa_times.max()]
     except Exception as e:
-        return [None, None, None, None, None, None, None]
+        return [None, None, None, None, None, None, None, None]
 
 
-# In[8]:
+# In[19]:
 
 
 #Get a list of all department names by the sub-account id:
@@ -153,7 +154,7 @@ for a_ in accs:
 #sub_account_dict
 
 
-# In[9]:
+# In[10]:
 
 
 #Get a list of all courses:
@@ -184,14 +185,14 @@ filtered_courses_df.to_csv('all_canvas_since_{}.csv'.format(begin_date), index=N
 filtered_courses_df
 
 
-# In[10]:
+# In[21]:
 
 
 #Check that the migration/production/dev is set correctly
 all_course_list_0 = filtered_courses_df.course_id.tolist()
 all_course_list_0_rows = []
-all_course_list_0_cols = ['course_id','Dept', 'Course_name', 'num_files', 'num_assignments', 'num_tot_fa',
-                        'last_update_at']
+all_course_list_0_cols = ['course_id','Dept', 'Course_name', 'course_state', 'num_files', 'num_assignments',
+                          'num_tot_fa','last_update_at']
 
 if run_mode == 'dev' or run_mode=='mig':
     num_courses = 5
@@ -208,7 +209,7 @@ print(all_course_list_0_df.shape)
 all_course_list_0_df.tail()
 
 
-# In[11]:
+# In[22]:
 
 
 #Check that the migration/production/dev is set correctly
@@ -246,14 +247,14 @@ print(all_lt_courses.shape)
 #all_lt_courses
 
 
-# In[12]:
+# In[23]:
 
 
 all_courses_df = pd.concat([all_course_list_0_df, all_lt_courses], ignore_index=True)
 #all_courses_df
 
 
-# In[13]:
+# In[25]:
 
 
 ts_cutoff_1w = pd.to_datetime('now') - pd.to_timedelta('7days')
@@ -263,19 +264,20 @@ all_courses_df['if_active_last_month'] = np.where(all_courses_df.last_update_at>
 all_courses_df['if_active_since_June1'] = np.where(all_courses_df.last_update_at>=pd.to_datetime('2020-06-01'),
                                                    True, False)
 all_courses_df['if_sandbox_course'] = np.where(all_courses_df.Dept=='Sandboxes', 1, 0)
+all_courses_df['if_default_fa'] = np.where(all_courses_df.num_tot_fa==26, 1, 0)
 all_courses_df = all_courses_df[all_courses_df.course_id.notna()].reset_index(drop=True)
 all_courses_df.drop_duplicates(subset=['course_id'], keep='last', inplace=True)
 #all_courses_df.tail()
 
 
-# In[14]:
+# In[26]:
 
 
 all_courses_df['last_update_at'] = all_courses_df['last_update_at'].dt.strftime('%Y-%m-%d')
 #all_courses_df.tail()
 
 
-# In[15]:
+# In[27]:
 
 
 all_courses_df[all_courses_df.if_sandbox_course==0]

@@ -43,7 +43,7 @@ course_id,course_code,course_name,account_id,created_at
 3191,10.982,10.982 Sem:Exp Colloid & Surface Chem,97,2020-05-28T02:21:33Z
 3192,10.321,10.321 Design: Mammal Sys & Synth Bio,97,2020-05-28T02:21:33Z
 3193,11.345,11.345 Entrprnrshp: Construct &RE Dev,89,2020-05-28T02:21:33Z
-3194,1.041,1.041 Transportation Systms Modeling,93,2020-05-28T02:21:33Z
+3194,1.041,1.041/1.200 Transportation: Foundations and Methods,93,2020-05-28T02:21:33Z
 3195,10.983,10.983 React Proc & Microfab Chem Sys,97,2020-05-28T02:21:33Z
 3196,10.34,10.34 Numerical Methods: Chem Eng,97,2020-05-28T02:21:34Z
 3197,11.351,11.351 Real Estate Ventures I,89,2020-05-28T02:21:34Z
@@ -93,11 +93,11 @@ course_id,course_code,course_name,account_id,created_at
 3242,11.528,11.528 Transportation & Urban Dev,89,2020-05-28T02:21:37Z
 3243,1.101,1.101 Civil & Envir Engr Design I,93,2020-05-28T02:21:37Z
 3244,10.A13,10.A13 Chemical Accidents,97,2020-05-28T02:21:37Z
-3245,10.50,10.50 Analysis:Transport Phenomena,97,2020-05-28T02:21:37Z
+3245,10.50,10.50: Analysis of Transport Phenomena,97,2020-05-28T02:21:37Z
 3246,11.540,11.540 Urban Transportation Planning,89,2020-05-28T02:21:37Z
 3247,1.106,1.106 Env Fluid Trnsp Proc & Hyd Lab,93,2020-05-28T02:21:37Z
 3248,10.A14,10.A14 Exploring ChemE,97,2020-05-28T02:21:37Z
-3249,10.568,10.568 Physical Chemistry of Polymers,97,2020-05-28T02:21:38Z
+3249,10.568/3.942,Physical Chemistry of Polymers,97,2020-05-28T02:21:38Z
 3250,11.601,11.601 Intro: Envir Policy & Planning,89,2020-05-28T02:21:38Z
 3251,1.125,1.125 Arch& Engineering Software Sys,93,2020-05-28T02:21:38Z
 3252,10.A15,10.A15 Exploring ChemE,97,2020-05-28T02:21:38Z
@@ -173,7 +173,7 @@ course_id,course_code,course_name,account_id,created_at
 3322,11.964,11.964 Independent Study: Real Estate,89,2020-05-28T02:21:43Z
 3323,10.952,10.952 Bioelectrochemical Engineering,97,2020-05-28T02:21:43Z
 3324,1.984,1.984 Teaching in Civil & Envir Engr,93,2020-05-28T02:21:43Z
-3325,11.107,11.107 Economic Development Tools,89,2020-05-28T02:21:43Z
+3325,11.107,11.107/11.407  Economic Development Tools,89,2020-05-28T02:21:43Z
 3326,11.A11,11.A11 Topics in Interntl Development,89,2020-05-28T02:21:44Z
 3327,10.953,10.953 Sem: Heterogeneous Catalysis,97,2020-05-28T02:21:44Z
 3328,1.997,1.997 Practicum Training in CEE,93,2020-05-28T02:21:44Z
@@ -194,7 +194,7 @@ course_id,course_code,course_name,account_id,created_at
 3343,10.957,10.957 Seminar in Bioengineering Tech,97,2020-05-28T02:21:45Z
 3344,1.NIV,1.NIV Visiting Student Research,93,2020-05-28T02:21:45Z
 3345,11.188,11.188 Urban Planning & Soc Sci Lab,89,2020-05-28T02:21:45Z
-3346,11.S188,11.S188 Spec Subj Urban Studies & Plan,89,2020-05-28T02:21:45Z
+3346,11.S188,11.S188/11.S951 Racial Justice Teach-In ,89,2020-05-28T02:21:45Z
 3347,10.958,10.958 Sem: Fluid Mech & Soft Matter,97,2020-05-28T02:21:45Z
 3348,1.S82,1.S82 Spec Prob Envir Mcrobio & Chem,93,2020-05-28T02:21:45Z
 3349,11.189,11.189 Urban Fieldwork,89,2020-05-28T02:21:45Z
@@ -245,9 +245,9 @@ course_id,course_code,course_name,account_id,created_at
 3394,11.S947,11.S947 Spec Subj Urban Studies & Plan,89,2020-05-28T02:21:52Z
 3395,12.741,12.741 Marine Bioinorganic Chemistry,127,2020-05-28T02:21:52Z
 3396,11.S950,11.S950 Spec Sem Urban Studies & Plan,89,2020-05-28T02:21:52Z
-3397,14.197,14.197 Independent  Research,109,2020-05-28T02:21:52Z
+3397,14.197,14.197 Independent Research,109,2020-05-28T02:21:52Z
 3398,16.72,16.72 Air Traffic Control,98,2020-05-28T02:21:52Z
-3399,11.S951,11.S951 Spec Sem Urban Studies & Plan,89,2020-05-28T02:21:52Z
+3399,11.S951,11.S951,89,2020-05-28T02:21:52Z
 3400,12.742,12.742 Marine Chemistry,127,2020-05-28T02:21:52Z
 3401,14.198,14.198 Teaching Intro Economics,109,2020-05-28T02:21:53Z
 3402,11.S952,11.S952 Spec Sem Urban Studies & Plan,89,2020-05-28T02:21:53Z
@@ -265,7 +265,7 @@ course_id,course_code,course_name,account_id,created_at
 3414,12.754,12.754 Sem: Oceanography at WHOI,127,2020-05-28T02:21:54Z
 3415,11.S955,11.S955 Spec Sem Urban Studies & Plan,89,2020-05-28T02:21:54Z
 3416,14.282,14.282 Organizational Economics,109,2020-05-28T02:21:54Z
-3417,16.887,16.887 Tech Roadmapping & Development,98,2020-05-28T02:21:54Z
+3417,16.887 EM.427,16.887 EM.427 Tech Roadmapping & Development,98,2020-05-28T02:21:54Z
 3418,12.756,12.756 Sem: Oceanography at WHOI,127,2020-05-28T02:21:54Z
 3419,11.S956,11.S956 Spec Sem Urban Studies & Plan,89,2020-05-28T02:21:54Z
 3420,14.30,14.30 Intro Statistical Meth in Econ,109,2020-05-28T02:21:54Z
@@ -363,7 +363,7 @@ course_id,course_code,course_name,account_id,created_at
 3512,12.158,12.158 Molecular Biogeochemistry,127,2020-05-28T02:22:02Z
 3513,12.A32,12.A32 Cellular Automata,127,2020-05-28T02:22:02Z
 3514,14.URN,14.URN Undergraduate Research,109,2020-05-28T02:22:02Z
-3515,12.A56,GPS 12S56 Seminar: GPS Where are you?,127,2020-05-28T02:22:02Z
+3515,12.A56,GPS 12.A56 Seminar: GPS Where are you?,127,2020-05-28T02:22:02Z
 3516,12.174,12.174 Chemistry of Life,127,2020-05-28T02:22:02Z
 3517,17.42,17.42 Causes & Prevention of War,110,2020-05-28T02:22:02Z
 3518,16.001,16.001 Unified Engin Mtrls & Struct,98,2020-05-28T02:22:02Z
@@ -379,7 +379,7 @@ course_id,course_code,course_name,account_id,created_at
 3528,17.468,17.468 Foundations: Security Studies,110,2020-05-28T02:22:03Z
 3529,12.S592,"12.S592 Spec Sem: Earth, Atmos, Planet",127,2020-05-28T02:22:03Z
 3530,16.100,16.100 Aerodynamics,98,2020-05-28T02:22:03Z
-3531,12.318,12.318 Atmos Data & Large-scale Dynam,127,2020-05-28T02:22:03Z
+3531,12.318,12.318/12.818 Intro to Atmospheric Data & Large-scale Dynamics,127,2020-05-28T02:22:03Z
 3532,17.472,17.472 Gray Space Between War Peace,110,2020-05-28T02:22:03Z
 3533,16.110,16.110 Flight Vehicle Aerodynamics,98,2020-05-28T02:22:03Z
 3534,12.335,12.335 Exp Atmospheric Chemistry,127,2020-05-28T02:22:04Z
@@ -413,7 +413,7 @@ course_id,course_code,course_name,account_id,created_at
 3562,12.URW,12.URW Undergrad Research Wellesley,127,2020-05-28T02:22:06Z
 3563,12.421,12.421 Principles of Remote Sensing,127,2020-05-28T02:22:06Z
 3564,17.804,17.804 Quantitative Rsrch Methods III,110,2020-05-28T02:22:06Z
-3565,16.55,16.55 Ionized Gases,98,2020-05-28T02:22:06Z
+3565,16.55/22.64J,16.55/22.64J Ionized Gases,98,2020-05-28T02:22:06Z
 3566,12.425,8.290/12.425/12.625  Extrasolar Planets,127,2020-05-28T02:22:06Z
 3567,17.830,17.830 Empir Methods: Political Econ,110,2020-05-28T02:22:06Z
 3568,14.001,14.001 Data Econ & Dev Pol Internship,109,2020-05-28T02:22:06Z
@@ -451,7 +451,7 @@ course_id,course_code,course_name,account_id,created_at
 3600,12.708,12.708 Topics Paleoceanogrphy,127,2020-05-28T02:22:09Z
 3601,16.715,"16.715 Aerospace, Energy, & Environmt",98,2020-05-28T02:22:09Z
 3602,17.960,17.960 Reading Seminar in Soc Science,110,2020-05-28T02:22:09Z
-3603,12.710,12.710 Marine Geology & Geophysics I,127,2020-05-28T02:22:09Z
+3603,12.710,12.710 Geological Oceanography,127,2020-05-28T02:22:09Z
 3604,17.NIV,17.NIV Visiting Student Research,110,2020-05-28T02:22:09Z
 3605,14.10,14.10 Reading Seminar in Economics,109,2020-05-28T02:22:09Z
 3606,17.S918,17.S918 Spec Subj in Political Science,110,2020-05-28T02:22:10Z
@@ -584,7 +584,7 @@ course_id,course_code,course_name,account_id,created_at
 3733,20.A03,"20.A03 Exploring Zoonotic Disease, Mi",99,2020-05-28T02:22:23Z
 3734,18.384,18.384 Undergrad Physical Math Sem,128,2020-05-28T02:22:23Z
 3735,2.999,2.999 Engr Degree Thesis Proposal,94,2020-05-28T02:22:23Z
-3736,2.013,2.013 Engineering Systems Design,94,2020-05-28T02:22:23Z
+3736,2.013/2.733,2.013/2.733 Engineering Systems Design,94,2020-05-28T02:22:23Z
 3737,18.385,18.385 Nonlinear Dynamics & Chaos,128,2020-05-28T02:22:23Z
 3738,20.A05,20.A05 Hack Your Mind,99,2020-05-28T02:22:23Z
 3739,2.A16,2.A16 Founder's Journey,94,2020-05-28T02:22:23Z
@@ -696,7 +696,7 @@ course_id,course_code,course_name,account_id,created_at
 3845,21G.105,21G.105 Chinese V (Regular),113,2020-05-28T02:22:34Z
 3846,21A.URG,21A.URG Undergraduate Research,112,2020-05-28T02:22:34Z
 3847,21H.009,21H.009 World History Since 1800,114,2020-05-28T02:22:34Z
-3848,21G.046,21G.046 Modern Chinese Fiction & Film,113,2020-05-28T02:22:34Z
+3848,21G.046,21G.046/21G.192 Modern Chinese Fiction & Film,113,2020-05-28T02:22:34Z
 3849,21G.107,21G.107 Chinese I (Streamlined),113,2020-05-28T02:22:34Z
 3850,21G.058,21G.058 Race and Migration in Europe,113,2020-05-28T02:22:35Z
 3851,21H.061,21H.061 American Presidential Election,114,2020-05-28T02:22:35Z
@@ -744,7 +744,7 @@ course_id,course_code,course_name,account_id,created_at
 3894,21G.233,21G.233 Adv Spkng & Critcl Listeng ELS,113,2020-05-28T02:22:40Z
 3895,21M.051 L04,"21M.051 Fundamentals of Music, Lecture 4 (David)",116,2020-05-28T02:22:40Z
 3896,21M.600 L03,"21M.600 Introduction to Acting, Lecture 3",116,2020-05-28T02:22:40Z
-3897,21H.244,21H.244 Imperial & Revolutionry Russia,114,2020-05-28T02:22:40Z
+3897,21H.244,21H.244 Imperial & Revolutionary Russia,114,2020-05-28T02:22:40Z
 3898,21G.301,21G.301 French I,113,2020-05-28T02:22:40Z
 3899,21M.051 L01,"21M.051 Fundamentals of Music, Lecture 1 (Iker)",116,2020-05-28T02:22:41Z
 3900,21M.600 L04,"21M.600 Introduction to Acting, Lecture 4",116,2020-05-28T02:22:41Z
@@ -792,9 +792,9 @@ course_id,course_code,course_name,account_id,created_at
 3942,21M.623,21M.623 Physical Improvisation: Bodies,116,2020-05-28T02:22:45Z
 3943,21H.143/21G.056/21G.356,21H. 143/21G.056/21G.356 Making of Modern Europe,113,2020-05-28T02:22:45Z
 3944,21H.391,21H.391 Undergrad Independent Study,114,2020-05-28T02:22:45Z
-3945,21M.301 L01,"21M.301 Harmony and Counterpoint I, Lecture 1",116,2020-05-28T02:22:45Z
+3945,21M.301 L1&L2,"Harmony & Counterpoint I, Lam",116,2020-05-28T02:22:45Z
 3946,21M.624,21M.624 Acting with the Camera,116,2020-05-28T02:22:45Z
-3947,21M.301 L02,"21M.301 Harmony and Counterpoint I, Lecture 2",116,2020-05-28T02:22:45Z
+3947,21M.301 (L2),"Harmony & Counterpoint I, Lam*",116,2020-05-28T02:22:45Z
 3948,21G.401,21G.401 German I,113,2020-05-28T02:22:45Z
 3949,21H.992,21H.992 Graduate Independent Study,114,2020-05-28T02:22:45Z
 3950,21M.645,21M.645 Motion Theater,116,2020-05-28T02:22:45Z
@@ -841,7 +841,6 @@ course_id,course_code,course_name,account_id,created_at
 3993,21M.864,21M.864 Research in Theater,116,2020-05-28T02:22:49Z
 3994,21G.505,21G.505 Japanese V,113,2020-05-28T02:22:49Z
 3995,21M.401,21M.401 MIT Concert Choir,116,2020-05-28T02:22:50Z
-3996,21L.003,21L.003 Reading Fiction,115,2020-05-28T02:22:50Z
 3997,21M.865,21M.865 Research in Theater,116,2020-05-28T02:22:50Z
 3998,21M.405,21M.405 MIT Chamber Chorus,116,2020-05-28T02:22:50Z
 3999,21G.611,21G.611 Russian I (Regular),113,2020-05-28T02:22:50Z
@@ -859,7 +858,7 @@ course_id,course_code,course_name,account_id,created_at
 4011,21L.005,21L.005 Introduction to Drama,115,2020-05-28T02:22:51Z
 4012,21M.442,21M.442 Festival Jazz Ensemble,116,2020-05-28T02:22:51Z
 4013,21M.THU,21M.THU Undergraduate Thesis,116,2020-05-28T02:22:51Z
-4014,21G.701,21G.701 Spanish I,113,2020-05-28T02:22:51Z
+4014,21G.701,21G.701 Spanish I - Barroso,113,2020-05-28T02:22:51Z
 4015,21M.445,21M.445 Chamber Music Society,116,2020-05-28T02:22:51Z
 4016,21L.010,21L.010 Writing with Shakespeare,115,2020-05-28T02:22:51Z
 4017,21M.UR,21M.UR Ugrd Rsch in Music & Thtr Arts,116,2020-05-28T02:22:52Z
@@ -876,12 +875,11 @@ course_id,course_code,course_name,account_id,created_at
 4028,21M.480,21M.480 Advanced Music Performance,116,2020-05-28T02:22:53Z
 4029,21W.011 L01,"21W.011 Writing and Rhetoric, Lecture 1",117,2020-05-28T02:22:53Z
 4030,21G.704,21G.704 Spanish IV,113,2020-05-28T02:22:53Z
-4031,21L.015 L02,"21L.015 Childrens Literature, Lecture 2",115,2020-05-28T02:22:53Z
 4032,21M.500,21M.500 Adv Seminar in Music,116,2020-05-28T02:22:53Z
 4033,21W.012,21W.012 Writing and Rhetoric,117,2020-05-28T02:22:53Z
 4034,21M.531,21M.531 Independent Study in Music,116,2020-05-28T02:22:53Z
 4035,21G.708,21G.708 Spanish:Communicatn Intens I,113,2020-05-28T02:22:53Z
-4036,21L.019,21L.019 European & Latin Amer Fiction,115,2020-05-28T02:22:53Z
+4036,21L.019,Intro to European & Latin Amer Fiction,115,2020-05-28T02:22:53Z
 4037,21W.013,21W.013 Writing and Rhetoric,117,2020-05-28T02:22:53Z
 4038,21G.709,21G.709 Spanish:Communicatn Intens II,113,2020-05-28T02:22:54Z
 4039,21L.020,21L.020 Globalization,115,2020-05-28T02:22:54Z
@@ -916,7 +914,7 @@ course_id,course_code,course_name,account_id,created_at
 4068,21L.488,21L.488 Contemporary Literature,115,2020-05-28T02:22:57Z
 4069,21W.744,21W.744 The Art of Comic Book Writing,117,2020-05-28T02:22:58Z
 4070,21G.911,21G.911 Independent Study,113,2020-05-28T02:22:58Z
-4071,21W.747 L01,"21W.747 Rhetoric, Lecture 1",117,2020-05-28T02:22:58Z
+4071,21W.747 L01,"21W.747 Rhetoric, Lecture 1 & Lecture 2",117,2020-05-28T02:22:58Z
 4072,21L.607,21L.607 Greek I,115,2020-05-28T02:22:58Z
 4073,21G.S02,21G.S02 Spec Subj: Global Studies/Lang,113,2020-05-28T02:22:58Z
 4074,21W.747 L02,"21W.747 Rhetoric, Lecture 2",117,2020-05-28T02:22:58Z
@@ -926,7 +924,7 @@ course_id,course_code,course_name,account_id,created_at
 4078,21W.755 L01,"21W.755 Writng & Reading Short Stories, Lecture 1",117,2020-05-28T02:22:59Z
 4079,21L.613,21L.613 Latin Readings,115,2020-05-28T02:22:59Z
 4080,21G.THU,21G.THU GSL Undergraduate Thesis,113,2020-05-28T02:22:59Z
-4081,21W.755 L02,"21W.755 Writng & Reading Short Stories, Lecture 2",117,2020-05-28T02:22:59Z
+4081,21W.755 L02,"21W.755 Writing & Reading Short Stories, Lecture 2",117,2020-05-28T02:22:59Z
 4082,21L.614,21L.614 Advanced Latin Readings,115,2020-05-28T02:22:59Z
 4083,21G.UR,21G.UR Undergraduate Research,113,2020-05-28T02:22:59Z
 4084,21W.757,21W.757 Fiction Workshop,117,2020-05-28T02:23:00Z
@@ -994,7 +992,7 @@ course_id,course_code,course_name,account_id,created_at
 4146,3.156,3.156 Photonic Materials and Devices,95,2020-05-28T02:23:06Z
 4147,24.892,24.892 Independent Study: Philosophy,118,2020-05-28T02:23:06Z
 4148,4.025,4.025 Arch Design Studio III,88,2020-05-28T02:23:07Z
-4149,22.03,22.03 Introduction to Nuclear Design,100,2020-05-28T02:23:07Z
+4149,3.007/22.03,3.007/22.03 Introduction to Design,100,2020-05-28T02:23:07Z
 4150,3.16,3.16 Metallic Matls Selctn Challngs,95,2020-05-28T02:23:07Z
 4151,24.893,24.893 Dissertation Workshop,118,2020-05-28T02:23:07Z
 4152,22.033,22.033 Nuclear Systems Design Project,100,2020-05-28T02:23:07Z
@@ -1105,13 +1103,13 @@ course_id,course_code,course_name,account_id,created_at
 4257,4.180,4.180 Design Workshop,88,2020-05-28T02:23:16Z
 4258,4.390,"4.390 Art, Culture, & Tech Studio",88,2020-05-28T02:23:16Z
 4259,3.010,3.010 Structure of Materials,95,2020-05-28T02:23:16Z
-4260,3.S02,3.S02 Spec Subj in Matls Sci & Engr,95,2020-05-28T02:23:17Z
+4260,3.S02,3.S02/3.S72 Spec Subj in Matls Sci & Engr,95,2020-05-28T02:23:17Z
 4261,4.181,4.181 Architectural Design Workshop,88,2020-05-28T02:23:17Z
 4262,4.391,4.391 Independent Study: ACT,88,2020-05-28T02:23:17Z
 4263,3.013,3.013 Mechanics of Materials,95,2020-05-28T02:23:17Z
 4264,3.S03,3.S03 Spec Subj in Matls Sci & Engr,95,2020-05-28T02:23:17Z
 4265,4.392,4.392 Independent Study: ACT,88,2020-05-28T02:23:17Z
-4266,3.019,3.019 Intro to Symb & Math Computing,95,2020-05-28T02:23:17Z
+4266,3.019,"3.019 Intro to Symbolic, Mathematical, and  Visual Computing",95,2020-05-28T02:23:17Z
 4267,4.182,4.182 Architectural Design Workshop,88,2020-05-28T02:23:17Z
 4268,3.S06,3.S06 Spec Subj in Matls Sci & Engr,95,2020-05-28T02:23:17Z
 4269,4.393,4.393 Independent Study: ACT,88,2020-05-28T02:23:17Z
@@ -1264,7 +1262,7 @@ course_id,course_code,course_name,account_id,created_at
 4416,5.90,5.90 Problems in Chemistry,123,2020-05-28T02:23:32Z
 4417,4.NIV,4.NIV Visiting Student Research,88,2020-05-28T02:23:32Z
 4418,5.913,5.913 Seminar in Organic Chemistry,123,2020-05-28T02:23:32Z
-4419,6.172,6.172 Perfrmance Engr of Softwre Sys,96,2020-05-28T02:23:32Z
+4419,6.172,6.172 Performance Engineering of Software Systems,96,2020-05-28T02:23:32Z
 4420,4.S31,"4.S31 Spec Subj: Art, Culture & Tech",88,2020-05-28T02:23:32Z
 4421,5.921,5.921 Seminar: Chemical Biology,123,2020-05-28T02:23:32Z
 4422,4.S33,"4.S33 Spec Subj: Art, Culture & Tech",88,2020-05-28T02:23:33Z
@@ -1334,7 +1332,7 @@ course_id,course_code,course_name,account_id,created_at
 4490,6.928,6.928 Leading Creative Teams,96,2020-05-28T02:23:40Z
 4491,6.631,6.631 Optics and Photonics,96,2020-05-28T02:23:41Z
 4493,6.951,6.951 Graduate 6-A Internship,96,2020-05-28T02:23:41Z
-4494,6.720,6.720 Integrated Microelectr Devices,96,2020-05-28T02:23:41Z
+4494,6.720J/3.43J,6.720 Integrated Microelectronic Devices,96,2020-05-28T02:23:41Z
 4495,7.347,7.347 Advanced Undergraduate Seminar,124,2020-05-28T02:23:41Z
 4496,6.952,6.952 Graduate 6-A Internship,96,2020-05-28T02:23:41Z
 4497,7.MTHG,7.MTHG Microbiology Graduate Thesis,124,2020-05-28T02:23:41Z
@@ -1392,7 +1390,7 @@ course_id,course_code,course_name,account_id,created_at
 4550,7.435,7.435 Topics in Benthic Biology,124,2020-05-28T02:23:45Z
 4551,6.A05,6.A05 Mens et Manus: Building on the,96,2020-05-28T02:23:45Z
 4552,8.021,8.021 Physics II,125,2020-05-28T02:23:46Z
-4553,6.828,6.828 Operating System  Engineering,96,2020-05-28T02:23:46Z
+4553,6.828,6.828 Operating System Engineering,96,2020-05-28T02:23:46Z
 4554,7.436,7.436 Topics:Phytoplankton Biology,124,2020-05-28T02:23:46Z
 4555,6.A20,6.A20 Puzzles & Magic of Life at MIT,96,2020-05-28T02:23:46Z
 4556,8.022,8.022 Physics II,125,2020-05-28T02:23:46Z
@@ -1414,8 +1412,7 @@ course_id,course_code,course_name,account_id,created_at
 4573,7.491,7.491 Research in Biol Oceanography,124,2020-05-28T02:23:47Z
 4574,8.07,8.07 Electromagnetism II,125,2020-05-28T02:23:47Z
 4575,6.A59,6.A59 Secrets of Innovation:,96,2020-05-28T02:23:47Z
-4576,7.492,7.492 Meth& Problems in Microbiology,124,2020-05-28T02:23:48Z
-4577,8.09,8.09 Classical Mechanics III,125,2020-05-28T02:23:48Z
+4577,8.(3)09,8.(3)09 Classical Mechanics III,125,2020-05-28T02:23:48Z
 4578,6.NIV,6.NIV Visiting Student Research,96,2020-05-28T02:23:48Z
 4579,7.493 Microbial Genetics and Evolution - 2020,7.493 Microbial Genetics and Evolution - 2020,124,2020-05-28T02:23:48Z
 4580,8.10,8.10 Exploring & Communicating Phys,125,2020-05-28T02:23:48Z
@@ -1526,7 +1523,7 @@ course_id,course_code,course_name,account_id,created_at
 4685,8.UR,8.UR Undergraduate Research,125,2020-05-28T02:23:58Z
 4686,EC.A30,EC.A30 How to Succeed at MIT and Beyo,134,2020-05-28T02:23:58Z
 4687,9.S911,9.S911 Spec Subj Brain & Cog Sciences,126,2020-05-28T02:23:59Z
-4688,CMS.591,CMS.591 Education Theory & Practice I,119,2020-05-28T02:23:59Z
+4688,CMS.591,CMS.591 / 11.129 Education Theory & Practice I,119,2020-05-28T02:23:59Z
 4689,EC.A740,EC.A740 D-Lab Discovery,134,2020-05-28T02:23:59Z
 4690,9.S914,9.S914 Spec Subj Brain & Cog Sciences,126,2020-05-28T02:23:59Z
 4691,CMS.594,CMS.594 Education Technology Studio,119,2020-05-28T02:23:59Z
@@ -1542,10 +1539,8 @@ course_id,course_code,course_name,account_id,created_at
 4701,EC.URG,EC.URG Undergraduate Research,134,2020-05-28T02:24:00Z
 4702,9.UR,9.UR Undergraduate Research,126,2020-05-28T02:24:00Z
 4703,CMS.606,CMS.606 Media Internship,119,2020-05-28T02:24:00Z
-4704,EM.411,EM.411 Foundations Sys Design & Mgmt,103,2020-05-28T02:24:00Z
 4705,9.URG,9.URG Undergraduate Research,126,2020-05-28T02:24:01Z
 4706,CMS.608,CMS.608 Game Design,119,2020-05-28T02:24:01Z
-4707,EM.425,EM.425 Adv Pract & Res in Eng Proj Mn,103,2020-05-28T02:24:01Z
 4708,9.URG2,9.URG2 Undergraduate Rsrch:2nd Proj,126,2020-05-28T02:24:01Z
 4709,CMS.616,CMS.616 Games and Culture,119,2020-05-28T02:24:01Z
 4710,EM.441,EM.441 Integrated Design Lab I,103,2020-05-28T02:24:01Z
@@ -1562,7 +1557,7 @@ course_id,course_code,course_name,account_id,created_at
 4721,CMS.633,CMS.633/833 Digital Humanities,119,2020-05-28T02:24:02Z
 4722,EM.S20,EM.S20 Spec Subj Engr Mgmt,103,2020-05-28T02:24:02Z
 4723,AS.211,AS.211 Leadership Laboratory,132,2020-05-28T02:24:02Z
-4724,HST.508/Biophysics 170,Evolutionary & Quant Genomics,105,2020-05-28T02:24:02Z
+4724,HST.508/Biophysics 170,HST.508 Evolutionary & Quantitative Genomics,105,2020-05-28T02:24:02Z
 4725,CMS.636,CMS.636 Extending the Museum,119,2020-05-28T02:24:02Z
 4726,EM.S22,EM.S22 Spec Subj Engr Mgmt,103,2020-05-28T02:24:02Z
 4727,AS.301,AS.301 Leading & Effective Communicat,132,2020-05-28T02:24:02Z
@@ -1583,7 +1578,7 @@ course_id,course_code,course_name,account_id,created_at
 4742,ES.1801,ES.1801 Calculus,135,2020-05-28T02:24:03Z
 4743,AS.811,AS.811 Leadership Laboratory,132,2020-05-28T02:24:04Z
 4744,CMS.950,CMS.950 Workshop I,119,2020-05-28T02:24:04Z
-4745,HST.714,"HST.714 Sound, Speech, and Hearing",105,2020-05-28T02:24:04Z
+4745,HST.714,"Introduction to Sound, Speech, and Hearing",105,2020-05-28T02:24:04Z
 4746,ES.1802,ES.1802 Calculus,135,2020-05-28T02:24:04Z
 4747,CC.010,CC.010 Seminar I,133,2020-05-28T02:24:04Z
 4748,CMS.990,CMS.990 Colloquium Comparative Media,119,2020-05-28T02:24:04Z
@@ -1777,7 +1772,7 @@ course_id,course_code,course_name,account_id,created_at
 4936,SCM.250,SCM.250 Analytical Methods for SCM,107,2020-05-28T02:24:27Z
 4937,WGS.400,WGS.400 WGS Ugrad Independent Study,121,2020-05-28T02:24:27Z
 4938,SCM.251,SCM.251 Supply Chain Financal Analysis,107,2020-05-28T02:24:27Z
-4939,WGS.600,WGS.600 Dissertation Wkshp Wmn Studies,121,2020-05-28T02:24:27Z
+4939,WGS.600,Dissertation Workshop in Women and Gender  Studies,121,2020-05-28T02:24:27Z
 4940,WGS.610,Visual Transgressions: Gendered Identities in Art and Culture,121,2020-05-28T02:24:27Z
 4941,SCM.258,SCM.258 Written Communication for SCM,107,2020-05-28T02:24:27Z
 4942,WGS.615,WGS.615 Feminist Inquiry,121,2020-05-28T02:24:28Z
@@ -1791,7 +1786,7 @@ course_id,course_code,course_name,account_id,created_at
 4950,SCM.800,SCM.800/SCM.THG Research Project,107,2020-05-28T02:24:30Z
 4951,SCM.THG,SCM.THG Graduate Thesis,107,2020-05-28T02:24:30Z
 4953,SP.245,SP.245 The Sum of All Courses,138,2020-05-28T02:24:31Z
-4954,SP.246,SP.246 The Future,138,2020-05-28T02:24:32Z
+4954,SP.246,The Future: Global Challenges and Questions,138,2020-05-28T02:24:32Z
 4955,SP.250,"SP.250 Good Intentions, Good Outcomes",138,2020-05-28T02:24:32Z
 4956,SP.251,SP.251 Exp from Social Entrepreneurs,138,2020-05-28T02:24:33Z
 4957,SP.252,SP.252 Careers in Medicine,138,2020-05-28T02:24:33Z
@@ -1851,7 +1846,7 @@ course_id,course_code,course_name,account_id,created_at
 5013,shvonski,Shvonski Sandbox,139,2020-05-28T20:20:21Z
 5014,jarede,Temporary Sandbox,139,2020-05-28T20:20:21Z
 5015,boydcr,Temporary Sandbox,139,2020-05-28T20:20:21Z
-5016,sk4347,Mrs. Buff's Boating School,139,2020-05-28T20:20:21Z
+5016,sk4347,Mrs. Puff's Boarding School,139,2020-05-28T20:20:21Z
 5017,brandyb,Temporary Sandbox,139,2020-05-28T20:20:22Z
 5018,slarkin,Temporary Sandbox,139,2020-05-28T20:20:22Z
 5019,jett,Temporary Sandbox,139,2020-05-28T20:20:22Z
@@ -1915,9 +1910,10 @@ course_id,course_code,course_name,account_id,created_at
 5081,21G.EGRUNWAL,21G Test Course (EGRUNWAL),8,2020-05-29T00:43:40Z
 5082,SP.100 C/W Joaquin,"SP.100 Communications, Writing and Identity - Joaquin",138,2020-05-29T15:30:47Z
 5086,krishna,Temporary Sandbox,139,2020-05-29T15:51:17Z
-5096,15.280_FA20,15.280 Communication for Leaders: E2,30,2020-05-29T19:56:00Z
-5100,15.280_FA20,15.280 Communication for Leaders: F1,30,2020-05-29T19:56:01Z
-5104,15.280_FA20,15.280 Communication for Leaders: F2,30,2020-05-29T19:56:01Z
+5090,15.280_FA20,BluePrint: 15.280 Communication for Leaders,241,2020-05-29T19:55:55Z
+5096,15.280_FA20,15.280E2 Communication for Leaders,241,2020-05-29T19:56:00Z
+5100,15.280_FA20,15.280F1 Communication for Leaders,241,2020-05-29T19:56:01Z
+5104,15.280_FA20,15.280F2 Communication for Leaders,241,2020-05-29T19:56:01Z
 5108,15.284_FA20,15.284 Strategic Leadership Communication: A,21,2020-05-29T19:56:01Z
 5109,15.010_FA20,15.010 Economic Analysis for Business Decisions: AD,30,2020-05-29T19:56:01Z
 5112,15.284_FA20,15.284 Strategic Leadership Communication: B,21,2020-05-29T19:56:02Z
@@ -1926,33 +1922,33 @@ course_id,course_code,course_name,account_id,created_at
 5115,OLD_15.093_FA20,15.093 Optimization Methods,31,2020-05-29T19:56:02Z
 5117,15.010_FA20,15.010 Economic Analysis for Business Decisions: CF,30,2020-05-29T19:56:02Z
 5119,15.095_FA20,15.095 Machine Learning Under a Modern Optimization Lens,31,2020-05-29T19:56:02Z
-5127,15.311_FA20,15.311 Organizational Processes: A,30,2020-05-29T19:56:03Z
-5130,15.311_FA20,15.311 Organizational Processes: B,30,2020-05-29T19:56:03Z
-5134,15.311_FA20,15.311 Organizational Processes: C,30,2020-05-29T19:56:03Z
-5138,15.311_FA20,15.311 Organizational Processes: D,30,2020-05-29T19:56:04Z
-5142,15.311_FA20,15.311 Organizational Processes: E,30,2020-05-29T19:56:04Z
-5146,15.311_FA20,15.311 Organizational Processes: F,30,2020-05-29T19:56:04Z
+5127,15.311_FA20,15.311 A:  Organizational Processes,30,2020-05-29T19:56:03Z
+5130,15.311_FA20,15.311 B:  Organizational Processes,30,2020-05-29T19:56:03Z
+5134,15.311_FA20,15.311 C: Organizational Processes,30,2020-05-29T19:56:03Z
+5138,15.311_FA20,15.311 D:  Organizational Processes,30,2020-05-29T19:56:04Z
+5142,15.311_FA20,15.311 E:  Organizational Processes,30,2020-05-29T19:56:04Z
+5146,15.311_FA20,15.311 F: Organizational Processes,30,2020-05-29T19:56:04Z
 5157,15.060_FA20_A,"15.060 Data, Models, and Decisions: A",30,2020-05-29T19:56:05Z
 5161,15.060_FA20_B,"15.060 Data, Models, and Decisions: B",30,2020-05-29T19:56:05Z
-5164,15.280_FA20,15.280 Communication for Leaders: A1,30,2020-05-29T19:56:06Z
+5164,15.280_FA20,15.280A1 Communication for Leaders,241,2020-05-29T19:56:06Z
 5165,15.060_FA20_C,"15.060 Data, Models, and Decisions: C",30,2020-05-29T19:56:06Z
 5166,15.325_FA20,15.325 Seminar in Leadership: A,21,2020-05-29T19:56:06Z
 5168,15.060_FA20_D,"15.060 Data, Models, and Decisions: D",30,2020-05-29T19:56:06Z
-5169,15.280_FA20,15.280 Communication for Leaders: A2,30,2020-05-29T19:56:06Z
+5169,15.280_FA20,15.280A2 Communication for Leaders,241,2020-05-29T19:56:06Z
 5170,15.325_FA20,15.325 Seminar in Leadership: B,21,2020-05-29T19:56:06Z
 5171,15.060_FA20_E,"15.060 Data, Models, and Decisions: E",30,2020-05-29T19:56:06Z
-5172,15.280_FA20,15.280 Communication for Leaders: B1,30,2020-05-29T19:56:06Z
+5172,15.280_FA20,15.280B1 Communication for Leaders,241,2020-05-29T19:56:06Z
 5173,15.414_FA20,15.414 Financial Management,21,2020-05-29T19:56:06Z
 5175,15.060_FA20_F,"15.060 Data, Models, and Decisions: F",30,2020-05-29T19:56:07Z
-5176,15.280_FA20,15.280 Communication for Leaders: B2,30,2020-05-29T19:56:07Z
-5180,15.280_FA20,15.280 Communication for Leaders: C1,30,2020-05-29T19:56:07Z
+5176,15.280_FA20,15.280B2 Communication for Leaders,241,2020-05-29T19:56:07Z
+5180,15.280_FA20,15.280C1 Communication for Leaders,241,2020-05-29T19:56:07Z
 5181,15.425_FA20,15.425 Corporate Finance,26,2020-05-29T19:56:07Z
-5184,15.280_FA20,15.280 Communication for Leaders: C2,30,2020-05-29T19:56:07Z
+5184,15.280_FA20,15.280C2 Communication for Leaders,241,2020-05-29T19:56:07Z
 5187,15.072_000_FA20,15.072 Advanced Analytics Edge: 000,31,2020-05-29T19:56:07Z
-5188,15.280_FA20,15.280 Communication for Leaders: D1,30,2020-05-29T19:56:08Z
+5188,15.280_FA20,15.280D1 Communication for Leaders,241,2020-05-29T19:56:08Z
 5189,15.433_FA20,15.433 Financial Markets (meets with 15.4331),26,2020-05-29T19:56:08Z
-5191,15.280_FA20,15.280 Communication for Leaders: D2,30,2020-05-29T19:56:08Z
-5193,15.280_FA20,15.280 Communication for Leaders: E1,30,2020-05-29T19:56:08Z
+5191,15.280_FA20,15.280D2 Communication for Leaders,241,2020-05-29T19:56:08Z
+5193,15.280_FA20,15.280E1 Communication for Leaders,241,2020-05-29T19:56:08Z
 5198,15.572_FA20,"15.572 Analytics Lab: Action Learning Seminar on Analytics, Machine Learning, and the Digital Economy",31,2020-05-29T19:56:09Z
 5215,15.MLC_FA20,15.MLC 15.LeadershipIntro_MBA2022,36,2020-05-29T19:56:11Z
 5219,15.S01_FA20,15.S01 SSIM: Career Core,30,2020-05-29T19:56:11Z
@@ -1980,7 +1976,6 @@ course_id,course_code,course_name,account_id,created_at
 5291,sb-train6-1,June 1 DPP Demo,15,2020-06-01T11:23:23Z
 5292,smed-test,smed-test,86,2020-06-01T13:37:13Z
 5293,TADays_SUM20,TA Days Summer 2020,15,2020-06-01T15:07:57Z
-5294,June 3,June 3 LT training,15,2020-06-03T16:05:13Z
 5295,15.CDO_A_SU20,15.CDO_A MBA Career Foundations,36,2020-06-03T16:31:18Z
 5296,15.CDO_B_SU20,15.CDO_B MFin Career Core,36,2020-06-03T16:31:18Z
 5297,15.CDO_C_SU20,15.CDO_C Sloan Fellows Career Core,21,2020-06-03T16:31:19Z
@@ -1989,7 +1984,6 @@ course_id,course_code,course_name,account_id,created_at
 5301,ctayaksi,Temporary Sandbox,139,2020-06-03T18:29:24Z
 5302,doval,Temporary Sandbox,139,2020-06-04T15:18:23Z
 5303,DPP,DPP Resources,15,2020-06-05T14:21:24Z
-5304,June 5,June 5 DLL meeting,15,2020-06-05T15:36:42Z
 5305,ACC-TEST,Accessibility Testing,86,2020-06-05T19:08:27Z
 5306,ESC-TEST,Escalations Testing,86,2020-06-05T19:30:54Z
 5307,echabane,TEST,139,2020-06-05T23:29:32Z
@@ -2110,7 +2104,7 @@ course_id,course_code,course_name,account_id,created_at
 5536,6.263,6.263 Data Communication Networks,96,2020-07-03T12:33:28Z
 5537,6.883,6.883 Meta Learning,96,2020-07-03T12:33:28Z
 5538,CMS.360,CMS.360 Intro to Civic Media,119,2020-07-03T12:33:29Z
-5539,MAS.S64,MAS.S64 Spec Subj in Media Technology,90,2020-07-03T12:33:31Z
+5539,MAS.S64,Real world evaluation of artificial intelligence and genome editing technologies,90,2020-07-03T12:33:31Z
 5540,14.05,14.05 Intermediate Macroeconomics,109,2020-07-03T12:33:37Z
 5541,lbonilla,Temporary Sandbox,139,2020-07-04T18:49:56Z
 5542,jagoutz,Temporary Sandbox,139,2020-07-07T01:14:35Z
@@ -2155,7 +2149,7 @@ course_id,course_code,course_name,account_id,created_at
 5581,bry,2020 Summer SDM Academic Retreat,139,2020-07-13T13:13:11Z
 5582,rjaramil,Temporary Sandbox,139,2020-07-13T18:53:22Z
 5583,cuhler,Temporary Sandbox,139,2020-07-13T20:38:09Z
-5584,1.84,1.84 Atmospheric Chemistry,93,2020-07-14T12:33:20Z
+5584,1.84/10.817/12.807,1.84/10.817/12.807 Atmospheric Chemistry,93,2020-07-14T12:33:20Z
 5585,18.715,18.715 Intro to Representation Theory,128,2020-07-14T12:33:21Z
 5586,22.074,22.074 Rad Damage& Effct in Nuc Matls,100,2020-07-14T12:33:23Z
 5587,24.S41,24.S41 Special Seminar: Philosophy,118,2020-07-14T12:33:23Z
@@ -2179,7 +2173,6 @@ course_id,course_code,course_name,account_id,created_at
 5605,8.S372,8.S372 Special Subject:  Physics,125,2020-07-15T12:33:25Z
 5606,8.14,8.14 Experimental Physics II,125,2020-07-15T12:33:25Z
 5607,ES.S40,ES.S40 Spec Seminar in the Humanities,135,2020-07-15T12:33:25Z
-5608,sb-train,LMS Advisory Committee demo,15,2020-07-15T13:15:42Z
 5609,rws42,Temporary Sandbox,139,2020-07-15T20:21:43Z
 5610,tEp22,Peldge Education,139,2020-07-15T20:21:43Z
 5611,szarko,Temporary Sandbox,139,2020-07-15T20:21:43Z
@@ -2213,9 +2206,9 @@ course_id,course_code,course_name,account_id,created_at
 5639,2.684,2.684 Wave Scattering,94,2020-07-19T12:33:22Z
 5640,2.S19,2.S19 Special Subject in MechE,94,2020-07-19T12:33:22Z
 5641,21G.701.01,21G.701.01 Spanish I,113,2020-07-20T14:24:10Z
-5642,21G.701.02,21G.701.02 Spanish I,113,2020-07-20T14:24:22Z
+5642,21G.701.02,21G.701.02 Spanish I - Ewald,113,2020-07-20T14:24:22Z
 5643,15.003_FA20,15.003 Analytics Tools,36,2020-07-20T14:26:50Z
-5644,21G.701,21G.701 Spanish I,113,2020-07-21T12:33:22Z
+5644,21G.701,21G.701 Spanish I - Generic,113,2020-07-21T12:33:22Z
 5646,wlinde:1,DMSE Remote Teaching and Learning,139,2020-07-21T16:05:01Z
 5649,10.S28,10.S28 Special Lab Subject in ChemE,97,2020-07-22T12:33:20Z
 5650,11.154,11.154 Big Data & Visualization,89,2020-07-22T12:33:20Z
@@ -2227,24 +2220,24 @@ course_id,course_code,course_name,account_id,created_at
 5658,kjvaeth,Temporary Sandbox,139,2020-07-23T19:44:37Z
 5659,rohan,Temporary Sandbox,139,2020-07-23T19:44:37Z
 5660,rohan:1,Temporary Sandbox,139,2020-07-23T19:44:38Z
-5661,PE.2020Q5.0600.7,Archery (Temp Sandbox),139,2020-07-23T19:45:51Z
+5661,PE.2020Q5.0600.7,Archery,139,2020-07-23T19:45:51Z
 5662,eaboyle,Temporary Sandbox,139,2020-07-25T01:52:53Z
 5663,kokey,Temporary Sandbox,139,2020-07-25T01:52:53Z
 5664,jcabbott:1,Temporary Sandbox,139,2020-07-28T13:12:27Z
 5665,15.010_FA20,15.010 Economic Analysis for Business Decisions: D1,30,2020-07-28T14:51:07Z
-5666,15.010_FA20,15.010 Economic Analysis for Business Decisions: D2,30,2020-07-28T14:51:07Z
+5666,15.010_FA20,OLD_15.010 Economic Analysis for Business Decisions: D2,30,2020-07-28T14:51:07Z
 5667,15.010_FA20,15.010 Economic Analysis for Business Decisions: E1,30,2020-07-28T14:51:07Z
-5668,15.311_FA20,15.311 Organizational Processes: D1,30,2020-07-28T14:51:07Z
-5669,15.311_FA20,15.311 Organizational Processes: D2,30,2020-07-28T14:51:07Z
-5670,15.311_FA20,15.311 Organizational Processes: E1,30,2020-07-28T14:51:07Z
-5671,15.515_FA20,15.515 Financial Accounting: D1,30,2020-07-28T14:51:08Z
-5672,15.515_FA20,15.515 Financial Accounting: D2,30,2020-07-28T14:51:08Z
-5673,15.515_FA20,15.515 Financial Accounting: E1,30,2020-07-28T14:51:08Z
+5668,15.311_FA20,15.311 G: Organizational Processes,30,2020-07-28T14:51:07Z
+5669,15.311_FA20,15.311 H:  Organizational Processes,30,2020-07-28T14:51:07Z
+5670,15.311_FA20,15.311 I: Organizational Processes,30,2020-07-28T14:51:07Z
+5671,OLD_15.515_FA20,OLD_15.515 Financial Accounting: D1,30,2020-07-28T14:51:08Z
+5672,15.515_FA20,OLD_15.515 Financial Accounting: D2,30,2020-07-28T14:51:08Z
+5673,15.515_FA20,OLD_15.515 Financial Accounting: E1,30,2020-07-28T14:51:08Z
 5674,15.681_SU20,15.681 From Analytics to Action,31,2020-07-28T15:15:09Z
 5675,15.SFSB_SU20,15.SFSB Sloan Fellows Skill Building,21,2020-07-28T15:15:09Z
-5678,15.060_D1_FA20,"15.060 Data, Models, and Decisions: D1",30,2020-07-28T15:15:09Z
-5679,15.060_D2_FA20,"15.060 Data, Models, and Decisions: D2",30,2020-07-28T15:15:09Z
-5680,15.060_E1_FA20,"15.060 Data, Models, and Decisions: E1",30,2020-07-28T15:15:09Z
+5678,OLD_15.060_D1_FA20,"15.060 Data, Models, and Decisions: D1",30,2020-07-28T15:15:09Z
+5679,15.060_D2_FA20,"OLD_15.060 Data, Models, and Decisions: D2",30,2020-07-28T15:15:09Z
+5680,OLD_15.060_E1_FA20,"OLD_15.060 Data, Models, and Decisions: E1",30,2020-07-28T15:15:09Z
 5682,15.072_A_FA20,15.072 Advanced Analytics Edge: A,31,2020-07-28T15:15:10Z
 5683,15.072_B_FA20,15.072 Advanced Analytics Edge: B,31,2020-07-28T15:15:10Z
 5686,15.093/6.215_FA20,15.093/6.215 Optimization Methods,31,2020-07-28T15:15:10Z
@@ -2274,7 +2267,7 @@ course_id,course_code,course_name,account_id,created_at
 5730,7.19,7.19 Comm in Experimental Biology,124,2020-08-03T14:10:06Z
 5731,21G.702.01/02,21G.702.01/02 Spanish II,113,2020-08-03T14:25:25Z
 5732,21G.702.03,21G.702.03 Spanish II,113,2020-08-03T14:25:34Z
-5733,zmarko,Temporary Sandbox,139,2020-08-03T18:32:56Z
+5733,zmarko,Math Camp II,139,2020-08-03T18:32:56Z
 5734,ES.9114,ES.9114 Non-violence: Prison Initiave,135,2020-08-04T12:33:54Z
 5735,brearley,Temporary Sandbox,139,2020-08-04T17:36:32Z
 5736,MAS.S90,MAS.S90 Spec Subj: Media Arts & Sci,90,2020-08-05T12:33:28Z
@@ -2284,11 +2277,11 @@ course_id,course_code,course_name,account_id,created_at
 5740,json:1,Temporary Sandbox,139,2020-08-06T11:57:08Z
 5741,16.886,16.886 Air Trnsprtation Sys Architctg,98,2020-08-06T12:33:22Z
 5742,3.S07,3.S07 Spec Subj in Matls Sci & Engr,95,2020-08-06T12:33:25Z
-5743,7.45,7.45 The Hallmarks of Cancer,124,2020-08-06T14:15:44Z
+5743,7.45,7.45 The Hallmarks of Cancer - 2020,124,2020-08-06T14:15:44Z
 5744,Biology TA Training,Biology TA Training,139,2020-08-06T15:51:13Z
 5745,bmc,Temporary Sandbox,139,2020-08-06T21:30:21Z
 5746,smstrang,Temporary Sandbox,139,2020-08-06T22:37:55Z
-5747,garo,Temporary Sandbox,139,2020-08-07T11:43:34Z
+5747,garo,Musicianship Lab,139,2020-08-07T11:43:34Z
 5748,7.431,7.431 Topics in Marine Ecology,124,2020-08-07T12:33:25Z
 5749,6.S974,6.S974 Special Subject in EECS,96,2020-08-07T12:33:25Z
 5750,7.439,7.439 Topics in Marine Microbiology,124,2020-08-07T12:33:25Z
@@ -2331,8 +2324,88 @@ course_id,course_code,course_name,account_id,created_at
 5788,10.01.03,10.01.03 Ethics for Engineers,97,2020-08-11T17:53:38Z
 5789,10.01.04,10.01.04 Ethics for Engineers,97,2020-08-11T17:53:45Z
 5790,Faculty Orientation,Faculty Orientation,139,2020-08-11T20:43:37Z
-5791,bry:2,Temporary Sandbox,139,2020-08-12T12:28:23Z
+5791,EM.Bootcamp,SDM Boot Camp 2020,139,2020-08-12T12:28:23Z
 5792,21M.302 L02,"21M.302 Harmony and Counterpoint II, Lecture 2 (Iker)",116,2020-08-12T14:59:01Z
-5793,cwalley,Temporary Sandbox,139,2020-08-12T16:14:14Z
+5793,cwalley,Environmental Conflict (grad),139,2020-08-12T16:14:14Z
 5794,tbdavies,Temporary Sandbox,139,2020-08-12T16:14:15Z
 5795,fendt,Temporary Sandbox,139,2020-08-12T16:14:15Z
+5796,rtb,Temporary Sandbox,139,2020-08-12T20:30:50Z
+5797,15.010_FA20,15.010 Economic Analysis for Business Decisions: DF,30,2020-08-13T20:45:03Z
+5798,15.280_FA20,15.280G1 Communication for Leaders:,241,2020-08-13T20:45:03Z
+5799,15.280_FA20,15.280H1 Communication for Leaders,241,2020-08-13T20:45:03Z
+5800,15.280_FA20,15.280I2 Communication for Leaders,241,2020-08-13T20:45:03Z
+5802,15.S24_FA20,15.S24 SSIM: Peer Feedback Practicum,21,2020-08-13T20:45:04Z
+5803,15.010_FA20,15.010/15.011(1) Economic Analysis for Business Decisions: ACI,30,2020-08-13T21:35:25Z
+5804,15.010_FA20,15.010 Economic Analysis for Business Decisions: BEG,30,2020-08-13T21:35:26Z
+5805,15.010_FA20,15.010 Economic Analysis for Business Decisions: H,30,2020-08-13T21:35:26Z
+5806,15.280_FA20,15.280G2 Communication for Leaders,241,2020-08-13T22:10:40Z
+5807,15.280_FA20,15.280H2 Communication for Leaders,241,2020-08-13T22:10:40Z
+5808,15.280_FA20,15.280I1 Communication for Leaders,241,2020-08-13T22:10:41Z
+5809,2.S009,2.S009 Special Subject in MechE,94,2020-08-14T12:33:30Z
+5810,2.S986,2.S986 Special Subject in MechE,94,2020-08-14T12:33:30Z
+5811,3.A23,3.A23 Keeping a Nature Journal,95,2020-08-14T12:33:37Z
+5812,3.S72,3.S72 Spec Subj in Matls Sci & Engr,95,2020-08-14T12:33:37Z
+5813,EC.S06,EC.S06 Special Subject: Edgerton Ctr,134,2020-08-14T12:33:42Z
+5814,EC.S11,EC.S11 Special Subject: Edgerton Ctr,134,2020-08-14T12:33:42Z
+5815,jing,Temporary Sandbox,139,2020-08-14T13:28:26Z
+5816,lhl3,Temporary Sandbox,139,2020-08-15T01:08:07Z
+5817,stoetzer,Temporary Sandbox,139,2020-08-15T01:08:07Z
+5818,2.001 Test,2.001 Mechanics and Materials I (Test site),139,2020-08-15T01:08:23Z
+5819,4.288 D04,"4.288 Prep-SMArchS Thesis, Design 4",88,2020-08-15T12:33:22Z
+5820,4.151,4.151 Architecture Studio: Core I,88,2020-08-15T12:33:22Z
+5821,4.153,4.153 Architecture Studio: Core III,88,2020-08-15T12:33:22Z
+5822,4.401,4.401 Environmental Tech in Bldgs,88,2020-08-15T12:33:23Z
+5823,4.288 D05,"4.288 Prep-SMArchS Thesis, Design 5",88,2020-08-15T12:33:23Z
+5824,4.S12,4.S12 Spec Subj: Architecture Design,88,2020-08-15T12:33:23Z
+5825,4.288 D03,"4.288 Prep-SMArchS Thesis, Design 3",88,2020-08-15T12:33:23Z
+5826,4.288 D02,"4.288 Prep-SMArchS Thesis, Design 2",88,2020-08-15T12:33:23Z
+5827,4.288 D01,"4.288 Prep-SMArchS Thesis, Design 1",88,2020-08-15T12:33:23Z
+5828,niappini,Temporary Sandbox,139,2020-08-17T16:52:41Z
+5829,jrice,Temporary Sandbox,139,2020-08-17T19:14:01Z
+5830,dkfitz,Temporary Sandbox,139,2020-08-17T20:25:19Z
+5831,ajzhou:3,14.20,139,2020-08-17T20:59:32Z
+5832,3.942,3.942 Polymer Physics,95,2020-08-18T12:33:24Z
+5833,PE-blueprint,PE Blueprint,130,2020-08-18T14:14:38Z
+5835,sbalfe:2,Temporary Sandbox,139,2020-08-18T16:39:48Z
+5836,dkfitz:1,Temporary Sandbox,139,2020-08-18T16:58:58Z
+5837,dkfitz:2,Temporary Sandbox,139,2020-08-18T16:58:58Z
+5838,sono,Temporary Sandbox,139,2020-08-18T19:20:33Z
+5839,jcabbott:3,Temporary Sandbox,139,2020-08-18T19:20:33Z
+5840,lhl3:2,Temporary Sandbox,139,2020-08-18T20:07:18Z
+5841,akiru,Temporary Sandbox,139,2020-08-18T20:07:18Z
+5842,reberhar,Temporary Sandbox,139,2020-08-18T20:07:18Z
+5843,15.418_MCC_Lab,15.418 - Laboratory in Corporate Finance,36,2020-08-18T23:55:55Z
+5844,15.CPPFall2020,15.CPP 2020 - Classroom Preparation and Participation,36,2020-08-19T00:33:18Z
+5845,2.S979,2.S979 Grad Special Subject in MechE,94,2020-08-20T12:33:22Z
+5846,6.S099,6.S099 Special Subject in EE & CS,96,2020-08-20T12:33:25Z
+5847,dowski,Temporary Sandbox,139,2020-08-20T14:04:12Z
+5848,tgrunber,Temporary Sandbox,139,2020-08-20T20:04:25Z
+5849,6.602,6.602 Fundamentals of Photonics,96,2020-08-21T12:33:22Z
+5850,7.492,7.492 Meth& Problems in Microbiology,124,2020-08-21T15:28:03Z
+5851,KTCP FA20-1,Kaufman Teaching Certificate Program (Section 1),15,2020-08-21T20:47:32Z
+5852,15.060_G_FA20,"15.060 Data, Models, and Decisions: G",30,2020-08-21T23:26:52Z
+5853,15.060_H_FA20,"15.060 Data, Models, and Decisions: H",30,2020-08-21T23:26:52Z
+5854,15.060_I_FA20,"15.060 Data, Models, and Decisions: I",30,2020-08-21T23:26:52Z
+5855,15.515_FA20,15.515 Financial Accounting: G,30,2020-08-21T23:26:53Z
+5856,15.515_FA20,15.515 Financial Accounting: H,30,2020-08-21T23:26:53Z
+5857,15.515_FA20,15.515 Financial Accounting: I,30,2020-08-21T23:26:53Z
+5858,15.280_FA20,BluePrint: 15.280 Communication for Leaders,241,2020-08-22T20:36:08Z
+5859,15.280_FA20,15.280A1 Communication for Leaders:,241,2020-08-22T20:36:09Z
+5860,15.280_FA20,15.280A2 Communication for Leaders,241,2020-08-22T20:36:09Z
+5861,15.280_FA20,15.280B1 Communication for Leaders,241,2020-08-22T20:36:09Z
+5862,15.280_FA20,15.280 Communication for Leaders: B2,241,2020-08-22T20:36:09Z
+5863,15.280_FA20,15.280 Communication for Leaders: C1,241,2020-08-22T20:36:09Z
+5864,15.280_FA20,15.280 Communication for Leaders: C2,241,2020-08-22T20:36:09Z
+5865,15.280_FA20,15.280 Communication for Leaders: D1,241,2020-08-22T20:36:09Z
+5866,15.280_FA20,15.280 Communication for Leaders: D2,241,2020-08-22T20:36:09Z
+5867,15.280_FA20,15.280 Communication for Leaders: E1,241,2020-08-22T20:36:09Z
+5868,15.280_FA20,15.280 Communication for Leaders: E2,241,2020-08-22T20:36:10Z
+5869,15.280_FA20,15.280 Communication for Leaders: F1,241,2020-08-22T20:36:10Z
+5870,15.280_FA20,15.280 Communication for Leaders: F2,241,2020-08-22T20:36:10Z
+5871,15.280_FA20,15.280 Communication for Leaders: G1,241,2020-08-22T20:36:10Z
+5872,15.280_FA20,15.280 Communication for Leaders: G2,241,2020-08-22T20:36:10Z
+5873,15.280_FA20,15.280 Communication for Leaders: H1,241,2020-08-22T20:36:10Z
+5874,15.280_FA20,15.280 Communication for Leaders: H2,241,2020-08-22T20:36:10Z
+5875,15.280_FA20,15.280 Communication for Leaders: I1,241,2020-08-22T20:36:10Z
+5876,15.280_FA20,15.280 Communication for Leaders: I2,241,2020-08-22T20:36:10Z
+5877,pao:1,Temporary Sandbox,139,2020-08-22T23:24:08Z

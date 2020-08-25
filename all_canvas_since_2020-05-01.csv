@@ -200,7 +200,7 @@ course_id,course_code,course_name,account_id,created_at
 3349,11.189,11.189 Urban Fieldwork,89,2020-05-28T02:21:45Z
 3350,11.S189,11.S189 Spec Subj Urban Studies & Plan,89,2020-05-28T02:21:45Z
 3351,10.960,10.960 Seminar:Polymers & Soft Matter,97,2020-05-28T02:21:45Z
-3352,1.S977,1.S977 Sp Grad Subj: Civ & Envir Engr,93,2020-05-28T02:21:46Z
+3352,1.S977,1.S977 Frontiers of Atmospheric Chemistry,93,2020-05-28T02:21:46Z
 3353,11.190,11.190 Urban Fieldwork,89,2020-05-28T02:21:46Z
 3354,11.S195,11.S195 Spec Subj Urban Studies & Plan,89,2020-05-28T02:21:46Z
 3355,10.962,10.962 Seminar in Molec Cell Engineer,97,2020-05-28T02:21:46Z
@@ -268,7 +268,7 @@ course_id,course_code,course_name,account_id,created_at
 3417,16.887 EM.427,16.887 EM.427 Tech Roadmapping & Development,98,2020-05-28T02:21:54Z
 3418,12.756,12.756 Sem: Oceanography at WHOI,127,2020-05-28T02:21:54Z
 3419,11.S956,11.S956 Spec Sem Urban Studies & Plan,89,2020-05-28T02:21:54Z
-3420,14.30,14.30 Intro Statistical Meth in Econ,109,2020-05-28T02:21:54Z
+3420,14.30,14.30 Intro Statistical Methods in Economics,109,2020-05-28T02:21:54Z
 3421,16.901,16.901 Topics in Computation,98,2020-05-28T02:21:54Z
 3422,11.S957,11.S957 Spec Sem Urban Studies & Plan,89,2020-05-28T02:21:54Z
 3423,14.32,14.32 Econometric Data Science,109,2020-05-28T02:21:54Z
@@ -405,7 +405,7 @@ course_id,course_code,course_name,account_id,created_at
 3554,12.410,12.410 Observational Techniques of Optical Astronomy,127,2020-05-28T02:22:05Z
 3555,12.UR,12.UR Undergraduate Research,127,2020-05-28T02:22:05Z
 3556,17.800,17.800 Quantitative Resrch Methods I,110,2020-05-28T02:22:05Z
-3557,16.485,16.485 Visual Navigation for Auto Veh,98,2020-05-28T02:22:05Z
+3557,16.485,16.485 Visual Nav. for Auto Vehicles,98,2020-05-28T02:22:05Z
 3558,12.URG,12.URG Undergraduate Research,127,2020-05-28T02:22:06Z
 3559,12.420,12.420 Physics & Chem of Solar System,127,2020-05-28T02:22:06Z
 3560,17.801,17.801 Political Science Scope Method,110,2020-05-28T02:22:06Z
@@ -415,7 +415,7 @@ course_id,course_code,course_name,account_id,created_at
 3564,17.804,17.804 Quantitative Rsrch Methods III,110,2020-05-28T02:22:06Z
 3565,16.55/22.64J,16.55/22.64J Ionized Gases,98,2020-05-28T02:22:06Z
 3566,12.425,8.290/12.425/12.625  Extrasolar Planets,127,2020-05-28T02:22:06Z
-3567,17.830,17.830 Empir Methods: Political Econ,110,2020-05-28T02:22:06Z
+3567,17.830,17.830 Empirical  Methods in Political Economy,110,2020-05-28T02:22:06Z
 3568,14.001,14.001 Data Econ & Dev Pol Internship,109,2020-05-28T02:22:06Z
 3569,16.621,16.621 Experimental Projects I,98,2020-05-28T02:22:06Z
 3570,12.446,12.446 Teaching Experience in EAPS,127,2020-05-28T02:22:06Z
@@ -519,7 +519,7 @@ course_id,course_code,course_name,account_id,created_at
 3668,2.830,2.830 Control of Manufacturing Proc,94,2020-05-28T02:22:18Z
 3669,18.CME,18.CME Study at Cambridge University,128,2020-05-28T02:22:18Z
 3670,18.100Q,18.100Q Real Analysis,128,2020-05-28T02:22:18Z
-3671,20.320,"20.320 Molecular, Cellular, and Tissue Biomechanics",99,2020-05-28T02:22:18Z
+3671,20.320,20.320 Analysis of Biomolecular and Cellular Systems,99,2020-05-28T02:22:18Z
 3672,2.853,2.853 Intro to Manufacturing Systems,94,2020-05-28T02:22:18Z
 3673,18.NIV,18.NIV Visiting Student Research,128,2020-05-28T02:22:18Z
 3674,18.101,18.101 Analysis and Manifolds,128,2020-05-28T02:22:18Z
@@ -892,7 +892,7 @@ course_id,course_code,course_name,account_id,created_at
 4046,21W.022 L01,"21W.022 Writing and Experience, Lecture 1",117,2020-05-28T02:22:55Z
 4047,21G.715,21G.715 Topics in Medicine and Public Health,113,2020-05-28T02:22:55Z
 4048,21W.022 L02,"21W.022 Writing and Experience, Lecture 2",117,2020-05-28T02:22:55Z
-4049,21L.325,21L.325 Small Wonders,115,2020-05-28T02:22:55Z
+4049,21L.325,21L.325 Citizen(s) (Small Wonders),115,2020-05-28T02:22:55Z
 4050,21G.735,21G.735 Adv Topics:Hispanic Lit & Film,113,2020-05-28T02:22:55Z
 4051,21W.022 L03,"21W.022 Writing and Experience, Lecture 3",117,2020-05-28T02:22:55Z
 4052,21L.434,21L.434 Science Fiction,115,2020-05-28T02:22:56Z
@@ -922,7 +922,7 @@ course_id,course_code,course_name,account_id,created_at
 4076,21L.608,21L.608 Greek II,115,2020-05-28T02:22:58Z
 4077,21G.THT,21G.THT GSL Pre-Thesis Tutorial,113,2020-05-28T02:22:59Z
 4078,21W.755 L01,"21W.755 Writng & Reading Short Stories, Lecture 1",117,2020-05-28T02:22:59Z
-4079,21L.613,21L.613 Latin Readings,115,2020-05-28T02:22:59Z
+4079,21L.613/614,21L.613/614 Latin Readings,115,2020-05-28T02:22:59Z
 4080,21G.THU,21G.THU GSL Undergraduate Thesis,113,2020-05-28T02:22:59Z
 4081,21W.755 L02,"21W.755 Writing & Reading Short Stories, Lecture 2",117,2020-05-28T02:22:59Z
 4082,21L.614,21L.614 Advanced Latin Readings,115,2020-05-28T02:22:59Z
@@ -1477,7 +1477,7 @@ course_id,course_code,course_name,account_id,created_at
 4639,9.520,9.520 Statistical Learning Theory,126,2020-05-28T02:23:53Z
 4640,8.790,8.790 Topics in Accelerator Physics,125,2020-05-28T02:23:54Z
 4641,9.58,9.58 Prjcts in Science of Intell,126,2020-05-28T02:23:54Z
-4642,9.66,9.66 Computationl Cognitive Science,126,2020-05-28T02:23:54Z
+4642,9.66,9.66 Computational Cognitive Science,126,2020-05-28T02:23:54Z
 4643,8.811,8.811 Particle Physics II,125,2020-05-28T02:23:54Z
 4644,9.72,9.72 Vision in Art and Neuroscience,126,2020-05-28T02:23:54Z
 4645,8.821,8.821 String Theory,125,2020-05-28T02:23:54Z
@@ -1540,7 +1540,7 @@ course_id,course_code,course_name,account_id,created_at
 4702,9.UR,9.UR Undergraduate Research,126,2020-05-28T02:24:00Z
 4703,CMS.606,CMS.606 Media Internship,119,2020-05-28T02:24:00Z
 4705,9.URG,9.URG Undergraduate Research,126,2020-05-28T02:24:01Z
-4706,CMS.608,CMS.608 Game Design,119,2020-05-28T02:24:01Z
+4706,CMS.608,CMS.608/864 Game Design,119,2020-05-28T02:24:01Z
 4708,9.URG2,9.URG2 Undergraduate Rsrch:2nd Proj,126,2020-05-28T02:24:01Z
 4709,CMS.616,CMS.616 Games and Culture,119,2020-05-28T02:24:01Z
 4710,EM.441,EM.441 Integrated Design Lab I,103,2020-05-28T02:24:01Z
@@ -1932,10 +1932,10 @@ course_id,course_code,course_name,account_id,created_at
 5161,15.060_FA20_B,"15.060 Data, Models, and Decisions: B",30,2020-05-29T19:56:05Z
 5164,15.280_FA20,15.280A1 Communication for Leaders,241,2020-05-29T19:56:06Z
 5165,15.060_FA20_C,"15.060 Data, Models, and Decisions: C",30,2020-05-29T19:56:06Z
-5166,15.325_FA20,15.325 Seminar in Leadership: A,21,2020-05-29T19:56:06Z
+5166,15.325_FA20,OLD_15.325 Seminar in Leadership: A,21,2020-05-29T19:56:06Z
 5168,15.060_FA20_D,"15.060 Data, Models, and Decisions: D",30,2020-05-29T19:56:06Z
 5169,15.280_FA20,15.280A2 Communication for Leaders,241,2020-05-29T19:56:06Z
-5170,15.325_FA20,15.325 Seminar in Leadership: B,21,2020-05-29T19:56:06Z
+5170,15.325_FA20,OLD_15.325 Seminar in Leadership: B,21,2020-05-29T19:56:06Z
 5171,15.060_FA20_E,"15.060 Data, Models, and Decisions: E",30,2020-05-29T19:56:06Z
 5172,15.280_FA20,15.280B1 Communication for Leaders,241,2020-05-29T19:56:06Z
 5173,15.414_FA20,15.414 Financial Management,21,2020-05-29T19:56:06Z
@@ -1944,7 +1944,7 @@ course_id,course_code,course_name,account_id,created_at
 5180,15.280_FA20,15.280C1 Communication for Leaders,241,2020-05-29T19:56:07Z
 5181,15.425_FA20,15.425 Corporate Finance,26,2020-05-29T19:56:07Z
 5184,15.280_FA20,15.280C2 Communication for Leaders,241,2020-05-29T19:56:07Z
-5187,15.072_000_FA20,15.072 Advanced Analytics Edge: 000,31,2020-05-29T19:56:07Z
+5187,15.072_000_FA20,OLDX_15.072 Advanced Analytics Edge: 000,31,2020-05-29T19:56:07Z
 5188,15.280_FA20,15.280D1 Communication for Leaders,241,2020-05-29T19:56:08Z
 5189,15.433_FA20,15.433 Financial Markets (meets with 15.4331),26,2020-05-29T19:56:08Z
 5191,15.280_FA20,15.280D2 Communication for Leaders,241,2020-05-29T19:56:08Z
@@ -2155,7 +2155,6 @@ course_id,course_code,course_name,account_id,created_at
 5587,24.S41,24.S41 Special Seminar: Philosophy,118,2020-07-14T12:33:23Z
 5588,6.S082,6.S082 Special Subject in EE & CS,96,2020-07-14T12:33:24Z
 5589,anasto,Temporary Sandbox,139,2020-07-14T13:41:20Z
-5590,TDF,Teaching Development Fellow Homebase,15,2020-07-14T13:51:28Z
 5591,jwchun,Temporary Sandbox,139,2020-07-14T18:08:50Z
 5592,mjpepin,Temporary Sandbox,139,2020-07-14T18:08:50Z
 5593,jgleaf,Temporary Sandbox,139,2020-07-14T18:08:51Z
@@ -2238,10 +2237,10 @@ course_id,course_code,course_name,account_id,created_at
 5678,OLD_15.060_D1_FA20,"15.060 Data, Models, and Decisions: D1",30,2020-07-28T15:15:09Z
 5679,15.060_D2_FA20,"OLD_15.060 Data, Models, and Decisions: D2",30,2020-07-28T15:15:09Z
 5680,OLD_15.060_E1_FA20,"OLD_15.060 Data, Models, and Decisions: E1",30,2020-07-28T15:15:09Z
-5682,15.072_A_FA20,15.072 Advanced Analytics Edge: A,31,2020-07-28T15:15:10Z
-5683,15.072_B_FA20,15.072 Advanced Analytics Edge: B,31,2020-07-28T15:15:10Z
+5682,15.072_A_FA20,OLDX_15.072 Advanced Analytics Edge: A,31,2020-07-28T15:15:10Z
+5683,15.072_B_FA20,OLDX_15.072 Advanced Analytics Edge: B,31,2020-07-28T15:15:10Z
 5686,15.093/6.215_FA20,15.093/6.215 Optimization Methods,31,2020-07-28T15:15:10Z
-5690,15.325_000_FA20,15.325 Seminar in Leadership I: 000,21,2020-07-28T15:15:11Z
+5690,15.325_000_FA20,OLD_15.325 Seminar in Leadership I: 000,21,2020-07-28T15:15:11Z
 5707,15.S19_FA20,15.S19 SSIM: Hacking the Future: The Fall of COVID,36,2020-07-28T15:15:13Z
 5709,dlevear,Temporary Sandbox,139,2020-07-28T15:28:25Z
 5710,HST.500,HST.500 Frontiers in (Bio)Medical Engineering and Physics,105,2020-07-28T17:17:38Z
@@ -2390,22 +2389,33 @@ course_id,course_code,course_name,account_id,created_at
 5856,15.515_FA20,15.515 Financial Accounting: H,30,2020-08-21T23:26:53Z
 5857,15.515_FA20,15.515 Financial Accounting: I,30,2020-08-21T23:26:53Z
 5858,15.280_FA20,BluePrint: 15.280 Communication for Leaders,241,2020-08-22T20:36:08Z
-5859,15.280_FA20,15.280A1 Communication for Leaders:,241,2020-08-22T20:36:09Z
+5859,15.280_FA20,15.280A1 Communication for Leaders,241,2020-08-22T20:36:09Z
 5860,15.280_FA20,15.280A2 Communication for Leaders,241,2020-08-22T20:36:09Z
 5861,15.280_FA20,15.280B1 Communication for Leaders,241,2020-08-22T20:36:09Z
-5862,15.280_FA20,15.280 Communication for Leaders: B2,241,2020-08-22T20:36:09Z
-5863,15.280_FA20,15.280 Communication for Leaders: C1,241,2020-08-22T20:36:09Z
-5864,15.280_FA20,15.280 Communication for Leaders: C2,241,2020-08-22T20:36:09Z
-5865,15.280_FA20,15.280 Communication for Leaders: D1,241,2020-08-22T20:36:09Z
-5866,15.280_FA20,15.280 Communication for Leaders: D2,241,2020-08-22T20:36:09Z
-5867,15.280_FA20,15.280 Communication for Leaders: E1,241,2020-08-22T20:36:09Z
-5868,15.280_FA20,15.280 Communication for Leaders: E2,241,2020-08-22T20:36:10Z
-5869,15.280_FA20,15.280 Communication for Leaders: F1,241,2020-08-22T20:36:10Z
-5870,15.280_FA20,15.280 Communication for Leaders: F2,241,2020-08-22T20:36:10Z
-5871,15.280_FA20,15.280 Communication for Leaders: G1,241,2020-08-22T20:36:10Z
-5872,15.280_FA20,15.280 Communication for Leaders: G2,241,2020-08-22T20:36:10Z
-5873,15.280_FA20,15.280 Communication for Leaders: H1,241,2020-08-22T20:36:10Z
-5874,15.280_FA20,15.280 Communication for Leaders: H2,241,2020-08-22T20:36:10Z
-5875,15.280_FA20,15.280 Communication for Leaders: I1,241,2020-08-22T20:36:10Z
-5876,15.280_FA20,15.280 Communication for Leaders: I2,241,2020-08-22T20:36:10Z
+5862,15.280_FA20,15.280B2 Communication for Leaders,241,2020-08-22T20:36:09Z
+5863,15.280_FA20,15.280C1 Communication for Leaders,241,2020-08-22T20:36:09Z
+5864,15.280_FA20,15.280C2 Communication for Leaders,241,2020-08-22T20:36:09Z
+5865,15.280_FA20,15.280D1 Communication for Leaders,241,2020-08-22T20:36:09Z
+5866,15.280_FA20,15.280D2 Communication for Leaders,241,2020-08-22T20:36:09Z
+5867,15.280_FA20,15.280E1 Communication for Leaders,241,2020-08-22T20:36:09Z
+5868,15.280_FA20,15.280E2 Communication for Leaders,241,2020-08-22T20:36:10Z
+5869,15.280_FA20,15.280F1 Communication for Leaders:,241,2020-08-22T20:36:10Z
+5870,15.280_FA20,15.280F2 Communication for Leaders,241,2020-08-22T20:36:10Z
+5871,15.280_FA20,15.280G1 Communication for Leaders,241,2020-08-22T20:36:10Z
+5872,15.280_FA20,15.280G2 Communication for Leaders,241,2020-08-22T20:36:10Z
+5873,15.280_FA20,15.280H1 Communication for Leaders,241,2020-08-22T20:36:10Z
+5874,15.280_FA20,15.280H2 Communication for Leaders,241,2020-08-22T20:36:10Z
+5875,15.280_FA20,15.280I1 Communication for Leaders,241,2020-08-22T20:36:10Z
+5876,15.280_FA20,15.280I2 Communication for Leaders,241,2020-08-22T20:36:10Z
 5877,pao:1,Temporary Sandbox,139,2020-08-22T23:24:08Z
+5878,15.072_FA20,15.072 Advanced Analytics Edge,31,2020-08-24T15:17:30Z
+5879,15.325_000_FA20,OLD2_15.325 Seminar in Leadership I: 000,21,2020-08-24T20:07:21Z
+5880,15.325_FA20,15.325 Seminar in Leadership I,21,2020-08-24T20:34:02Z
+5881,4.S13,4.S13 Spec Subj: Architecture Design,88,2020-08-25T12:34:22Z
+5882,6.S00,6.S00 Special Subject in EECS,96,2020-08-25T12:34:24Z
+5883,21G.704.01,21G.704.01 Spanish IV,113,2020-08-25T14:10:35Z
+5884,21G.704.02,21G.704.02 Spanish IV,113,2020-08-25T14:12:52Z
+5885,KTCP FA20-2,Kaufman Teaching Certificate Program (Section 2),15,2020-08-25T15:23:43Z
+5886,KTCP FA20-3,Kaufman Teaching Certificate Program (Section 3),15,2020-08-25T15:24:05Z
+5887,KTCP FA20-4,Kaufman Teaching Certificate Program (Section 4),15,2020-08-25T15:25:04Z
+5888,KTCP FA20-5,Kaufman Teaching Certificate Program (Section 5),15,2020-08-25T15:25:30Z

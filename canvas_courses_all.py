@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[3]:
 
 
 #import modules
@@ -20,14 +20,14 @@ from canvasapi import Canvas
 #import plotly.express as px
 
 
-# In[33]:
+# In[4]:
 
 
 #choose credential file paths and other possible changes:
 run_mode = 'dev' #or, 'prod', or 'mig' for when migrating the code
 
 
-# In[32]:
+# In[5]:
 
 
 
@@ -48,7 +48,7 @@ elif run_mode == 'mig':
     out_table = "all_courses3"
 
 
-# In[4]:
+# In[6]:
 
 
 
@@ -69,7 +69,7 @@ API_KEY = cred_json['ACCES_TOKEN']
 API_URL = cred_json['API_URL']#+'/accounts/1'
 
 
-# In[5]:
+# In[7]:
 
 
 # Initialize a new Canvas object
@@ -79,7 +79,7 @@ canvas.__dict__
 
 # ### Get courses running on Canvas -- created via migration or by LT's
 
-# In[6]:
+# In[8]:
 
 
 #Get the LT list from the Excel sheet
@@ -107,7 +107,7 @@ stellar_df['course_id'] = stellar_df['Canvas URL to migrate to'].str.split("/").
 '''
 
 
-# In[20]:
+# In[19]:
 
 
 def get_course_info(course_id):
@@ -125,23 +125,32 @@ def get_course_info(course_id):
         assn_ = c1.get_assignments()
         #Get the file updated times
         file_utimes = [f_.updated_at for f_ in files_]
-
+        
+        #Get the file created times
+        file_ctimes = [f_.created_at for f_ in files_]
+        
         #Get the assignment updated times
         assn_utimes = [a_.updated_at for a_ in assn_]
         fa_times = file_utimes + assn_utimes
+        
+        #Get the assignment created times
+        assn_ctimes = [a_.created_at for a_ in assn_]
+        fa_c_times = file_ctimes + assn_ctimes
 
+        
         #Convert the whole thing 
         fa_times = np.array(fa_times, dtype='datetime64')
+        fa_c_times = np.array(fa_c_times, dtype='datetime64')        
 
 
 
         return [c1.id, course_dept, course_name, course_state, len(file_utimes), len(assn_utimes), 
-                len(fa_times), fa_times.max()]
+                len(fa_times), fa_times.max(), fa_c_times.min()]
     except Exception as e:
-        return [None, None, None, None, None, None, None, None]
+        return [None, None, None, None, None, None, None, None, None]
 
 
-# In[19]:
+# In[10]:
 
 
 #Get a list of all department names by the sub-account id:
@@ -154,7 +163,7 @@ for a_ in accs:
 #sub_account_dict
 
 
-# In[10]:
+# In[11]:
 
 
 #Get a list of all courses:
@@ -185,14 +194,14 @@ filtered_courses_df.to_csv('all_canvas_since_{}.csv'.format(begin_date), index=N
 filtered_courses_df
 
 
-# In[21]:
+# In[20]:
 
 
 #Check that the migration/production/dev is set correctly
 all_course_list_0 = filtered_courses_df.course_id.tolist()
 all_course_list_0_rows = []
 all_course_list_0_cols = ['course_id','Dept', 'Course_name', 'course_state', 'num_files', 'num_assignments',
-                          'num_tot_fa','last_update_at']
+                          'num_tot_fa','last_update_at','first_created_at']
 
 if run_mode == 'dev' or run_mode=='mig':
     num_courses = 5
@@ -209,7 +218,7 @@ print(all_course_list_0_df.shape)
 all_course_list_0_df.tail()
 
 
-# In[22]:
+# In[21]:
 
 
 #Check that the migration/production/dev is set correctly
@@ -247,14 +256,14 @@ print(all_lt_courses.shape)
 #all_lt_courses
 
 
-# In[23]:
+# In[22]:
 
 
 all_courses_df = pd.concat([all_course_list_0_df, all_lt_courses], ignore_index=True)
 #all_courses_df
 
 
-# In[25]:
+# In[23]:
 
 
 ts_cutoff_1w = pd.to_datetime('now') - pd.to_timedelta('7days')
@@ -270,17 +279,24 @@ all_courses_df.drop_duplicates(subset=['course_id'], keep='last', inplace=True)
 #all_courses_df.tail()
 
 
-# In[26]:
+# In[24]:
 
 
 all_courses_df['last_update_at'] = all_courses_df['last_update_at'].dt.strftime('%Y-%m-%d')
+all_courses_df['first_created_at'] = all_courses_df['first_created_at'].dt.strftime('%Y-%m-%d')
 #all_courses_df.tail()
 
 
-# In[27]:
+# In[25]:
 
 
 all_courses_df[all_courses_df.if_sandbox_course==0]
 all_courses_df.to_gbq('lt_courses.{}'.format(out_table), project_id, if_exists='replace', credentials=credentials)
 #all_courses_df.to_csv('all_courses.csv', index=None)
+
+
+# In[27]:
+
+
+#all_courses_df['last_update_at']
 

@@ -109,7 +109,7 @@ stellar_df['course_id'] = stellar_df['Canvas URL to migrate to'].str.split("/").
 '''
 
 
-# In[67]:
+# In[76]:
 
 
 def get_course_info(course_id):
@@ -127,33 +127,45 @@ def get_course_info(course_id):
         files_ = c1.get_files()
         assn_ = c1.get_assignments()
         #Get the file updated times
+        file_utimes_all = [f_.updated_at for f_ in files_ ]        
         file_utimes = [f_.updated_at for f_ in files_ if datetime.strptime(f_.updated_at, 
                                                                         '%Y-%m-%dT%H:%M:%SZ') > cutoff_date]
         
         #Get the file created times
+        file_ctimes_all = [f_.created_at for f_ in files_ ]
         file_ctimes = [f_.created_at for f_ in files_ if datetime.strptime(f_.created_at, 
                                                                         '%Y-%m-%dT%H:%M:%SZ') > cutoff_date]
         
         #Get the assignment updated times
+        assn_utimes_all = [a_.updated_at for a_ in assn_ ]
         assn_utimes = [a_.updated_at for a_ in assn_ if datetime.strptime(a_.updated_at, 
                                                                         '%Y-%m-%dT%H:%M:%SZ') > cutoff_date]
-        fa_times = file_utimes + assn_utimes
+
         
         #Get the assignment created times
+        assn_ctimes_all = [a_.created_at for a_ in assn_ ]
         assn_ctimes = [a_.created_at for a_ in assn_ if datetime.strptime(a_.created_at, 
                                                                         '%Y-%m-%dT%H:%M:%SZ') > cutoff_date]
-        fa_c_times = file_ctimes + assn_ctimes
 
+        fa_times_all = file_utimes_all + assn_utimes_all
+        fa_c_times_all = file_ctimes_all + assn_ctimes_all
+        
+        fa_times = file_utimes + assn_utimes
+        fa_c_times = file_ctimes + assn_ctimes
+        
         
         #Convert the whole thing 
+        fa_times_all = np.array(fa_times_all, dtype='datetime64')
+        fa_c_times_all = np.array(fa_c_times_all, dtype='datetime64')
+        
         fa_times = np.array(fa_times, dtype='datetime64')
-        fa_c_times = np.array(fa_c_times, dtype='datetime64')        
+        fa_c_times = np.array(fa_c_times, dtype='datetime64')      
 
-        fa_max = fa_times.max() if len(fa_times)>0 else None
-        fa_c_min = fa_c_times.min() if len(fa_c_times)>0 else None
+        fa_max = fa_times.max() if len(fa_times)>0 else fa_times_all.max()
+        fa_c_min = fa_c_times.min() if len(fa_c_times)>0 else fa_c_times_all.min()
 
-        return [c1.id, course_dept, course_name, course_state, len(file_utimes), len(assn_utimes), 
-                len(fa_times), fa_max, fa_c_min]
+        return [c1.id, course_dept, course_name, course_state, len(file_utimes_all), len(assn_utimes_all), 
+                len(fa_times_all), fa_max, fa_c_min]
     except Exception as e:
         #print(e)
         return [None, None, None, None, None, None, None, None, None]
@@ -203,7 +215,7 @@ filtered_courses_df.to_csv('all_canvas_since_{}.csv'.format(begin_date), index=N
 filtered_courses_df
 
 
-# In[68]:
+# In[77]:
 
 
 #Check that the migration/production/dev is set correctly
@@ -227,7 +239,7 @@ print(all_course_list_0_df.shape)
 all_course_list_0_df.tail()
 
 
-# In[69]:
+# In[78]:
 
 
 #Check that the migration/production/dev is set correctly
@@ -265,21 +277,21 @@ print(all_lt_courses.shape)
 #all_lt_courses
 
 
-# In[70]:
+# In[79]:
 
 
 all_courses_df = pd.concat([all_course_list_0_df, all_lt_courses], ignore_index=True)
 #all_courses_df
 
 
-# In[71]:
+# In[80]:
 
 
 ts_cutoff_1w = pd.to_datetime('now') - pd.to_timedelta('7days')
 ts_cutoff_1m = pd.to_datetime('now') - pd.to_timedelta('30days')
 all_courses_df['if_active_last_week'] = np.where(all_courses_df.last_update_at>ts_cutoff_1w, True, False)
 all_courses_df['if_active_last_month'] = np.where(all_courses_df.last_update_at>ts_cutoff_1m, True, False)
-all_courses_df['if_active_since_June1'] = np.where(all_courses_df.last_update_at>=pd.to_datetime('2020-06-01'),
+all_courses_df['if_active_since_June1'] = np.where(all_courses_df.first_created_at>=pd.to_datetime('2020-06-01'),
                                                    True, False)
 all_courses_df['if_sandbox_course'] = np.where(all_courses_df.Dept=='Sandboxes', 1, 0)
 all_courses_df['if_default_fa'] = np.where(all_courses_df.num_tot_fa==26, 1, 0)
@@ -288,7 +300,7 @@ all_courses_df.drop_duplicates(subset=['course_id'], keep='last', inplace=True)
 #all_courses_df.tail()
 
 
-# In[72]:
+# In[81]:
 
 
 all_courses_df['last_update_at'] = all_courses_df['last_update_at'].dt.strftime('%Y-%m-%d')
@@ -296,7 +308,7 @@ all_courses_df['first_created_at'] = all_courses_df['first_created_at'].dt.strft
 #all_courses_df.tail()
 
 
-# In[73]:
+# In[82]:
 
 
 all_courses_df[all_courses_df.if_sandbox_course==0]

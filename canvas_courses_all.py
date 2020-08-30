@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[45]:
+# In[3]:
 
 
 #import modules
@@ -22,14 +22,14 @@ from datetime import datetime
 #import plotly.express as px
 
 
-# In[4]:
+# In[5]:
 
 
 #choose credential file paths and other possible changes:
 run_mode = 'dev' #or, 'prod', or 'mig' for when migrating the code
 
 
-# In[5]:
+# In[6]:
 
 
 
@@ -50,7 +50,7 @@ elif run_mode == 'mig':
     out_table = "all_courses3"
 
 
-# In[6]:
+# In[7]:
 
 
 
@@ -71,7 +71,7 @@ API_KEY = cred_json['ACCES_TOKEN']
 API_URL = cred_json['API_URL']#+'/accounts/1'
 
 
-# In[7]:
+# In[8]:
 
 
 # Initialize a new Canvas object
@@ -311,7 +311,10 @@ all_courses_df['first_created_at'] = all_courses_df['first_created_at'].dt.strft
 # In[82]:
 
 
-all_courses_df[all_courses_df.if_sandbox_course==0]
+#Exclude the last day's information as that's still incomplete.
+all_courses_df['first_created_at'] = pd.to_datetime(all_courses_df['first_created_at'])
+all_courses_df = all_courses_df[all_courses_df.first_created_at!= all_courses_df['first_created_at'].max()]
+
 all_courses_df.to_gbq('lt_courses.{}'.format(out_table), project_id, if_exists='replace', credentials=credentials)
 #all_courses_df.to_csv('all_courses.csv', index=None)
 

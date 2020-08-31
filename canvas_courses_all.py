@@ -294,7 +294,10 @@ all_courses_df['if_active_last_month'] = np.where(all_courses_df.last_update_at>
 all_courses_df['if_active_since_June1'] = np.where(all_courses_df.first_created_at>=pd.to_datetime('2020-06-01'),
                                                    True, False)
 all_courses_df['if_sandbox_course'] = np.where(all_courses_df.Dept=='Sandboxes', 1, 0)
-all_courses_df['if_default_fa'] = np.where(all_courses_df.num_tot_fa==26, 1, 0)
+#all_courses_df['if_default_fa'] = np.where(all_courses_df.num_tot_fa==26, 1, 0)
+all_courses_df['if_default_fa'] = np.where((((all_courses_df.num_files==22) & (all_courses_df.num_assignments==4)) 
+                              | ((all_courses_df.num_files==34) & (all_courses_df.num_assignments==26))), 1, 0)
+
 all_courses_df = all_courses_df[all_courses_df.course_id.notna()].reset_index(drop=True)
 all_courses_df.drop_duplicates(subset=['course_id'], keep='last', inplace=True)
 #all_courses_df.tail()
@@ -318,3 +321,7 @@ all_courses_df = all_courses_df[all_courses_df.first_created_at!= all_courses_df
 all_courses_df.to_gbq('lt_courses.{}'.format(out_table), project_id, if_exists='replace', credentials=credentials)
 #all_courses_df.to_csv('all_courses.csv', index=None)
 
+
+# ### Find total courses by date snapshot
+# 
+# We'll take a snapshot of all the previous courses, and for each day, we'll add only the new numbers.

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[3]:
+# In[1]:
 
 
 #import modules
@@ -22,14 +22,14 @@ from datetime import datetime
 #import plotly.express as px
 
 
-# In[5]:
+# In[2]:
 
 
 #choose credential file paths and other possible changes:
 run_mode = 'dev' #or, 'prod', or 'mig' for when migrating the code
 
 
-# In[6]:
+# In[3]:
 
 
 
@@ -50,7 +50,7 @@ elif run_mode == 'mig':
     out_table = "all_courses3"
 
 
-# In[7]:
+# In[4]:
 
 
 
@@ -71,7 +71,7 @@ API_KEY = cred_json['ACCES_TOKEN']
 API_URL = cred_json['API_URL']#+'/accounts/1'
 
 
-# In[8]:
+# In[5]:
 
 
 # Initialize a new Canvas object
@@ -81,7 +81,7 @@ canvas.__dict__
 
 # ### Get courses running on Canvas -- created via migration or by LT's
 
-# In[8]:
+# In[22]:
 
 
 #Get the LT list from the Excel sheet
@@ -92,7 +92,7 @@ lt_df['Email'] = lt_df.Email.str.lower()
 lt_df.tail()
 
 
-# In[28]:
+# In[7]:
 
 
 '''
@@ -109,7 +109,7 @@ stellar_df['course_id'] = stellar_df['Canvas URL to migrate to'].str.split("/").
 '''
 
 
-# In[76]:
+# In[26]:
 
 
 def get_course_info(course_id):
@@ -121,6 +121,8 @@ def get_course_info(course_id):
 
 
         course_dept = sub_account_dict[c1.account_id]
+        parent_account = parent_account_dict[c1.account_id]
+        
         course_name = c1.name
         course_state = c1.workflow_state
 
@@ -164,32 +166,43 @@ def get_course_info(course_id):
         fa_max = fa_times.max() if len(fa_times)>0 else fa_times_all.max()
         fa_c_min = fa_c_times.min() if len(fa_c_times)>0 else fa_c_times_all.min()
 
-        return [c1.id, course_dept, course_name, course_state, len(file_utimes_all), len(assn_utimes_all), 
-                len(fa_times_all), fa_max, fa_c_min]
+        return [c1.id, course_dept, parent_account, course_name, course_state, len(file_utimes_all), 
+                len(assn_utimes_all), len(fa_times_all), fa_max, fa_c_min]
     except Exception as e:
         #print(e)
-        return [None, None, None, None, None, None, None, None, None]
+        return [None, None, None, None, None, None, None, None, None, None]
 
 
-# In[58]:
+# In[18]:
 
 
 #Get a list of all department names by the sub-account id:
 acc = canvas.get_account(1)
 sub_account_dict = {}
+sub_account_dict[1] = 'MIT Root Account'
+parent_account_dict = {}
 accs = acc.get_subaccounts(recursive=True)
 for a_ in accs:
     sub_account_dict[a_.id] = a_.name
 
+for a_ in accs:
+    try:
+        parent_account_dict[a_.id] = sub_account_dict[a_.parent_account_id]
+    except Exception as e:
+        pass
+
+    
+#parent_account_dict
 #sub_account_dict
 
 
-# In[11]:
+# In[24]:
 
 
 #Get a list of all courses:
 large_num = 100000 #give a very large number so all courses are pulled recursively
-excl_acc = [1,17,76] #mention sub-accounts to be excluded
+#excl_acc = [1,17,76] #mention sub-accounts to be excluded
+excl_acc = [] #Don't implement it here...
 begin_date = '2020-05-01' #Date since when we are counting
 
 course_rows = []
@@ -215,14 +228,14 @@ filtered_courses_df.to_csv('all_canvas_since_{}.csv'.format(begin_date), index=N
 filtered_courses_df
 
 
-# In[77]:
+# In[28]:
 
 
 #Check that the migration/production/dev is set correctly
 all_course_list_0 = filtered_courses_df.course_id.tolist()
 all_course_list_0_rows = []
-all_course_list_0_cols = ['course_id','Dept', 'Course_name', 'course_state', 'num_files', 'num_assignments',
-                          'num_tot_fa','last_update_at','first_created_at']
+all_course_list_0_cols = ['course_id','Dept', 'parent_account', 'Course_name', 'course_state', 'num_files',
+                          'num_assignments','num_tot_fa','last_update_at','first_created_at']
 
 if run_mode == 'dev' or run_mode=='mig':
     num_courses = 5
@@ -239,7 +252,7 @@ print(all_course_list_0_df.shape)
 all_course_list_0_df.tail()
 
 
-# In[78]:
+# In[29]:
 
 
 #Check that the migration/production/dev is set correctly
@@ -277,14 +290,14 @@ print(all_lt_courses.shape)
 #all_lt_courses
 
 
-# In[79]:
+# In[30]:
 
 
 all_courses_df = pd.concat([all_course_list_0_df, all_lt_courses], ignore_index=True)
 #all_courses_df
 
 
-# In[80]:
+# In[31]:
 
 
 ts_cutoff_1w = pd.to_datetime('now') - pd.to_timedelta('7days')
@@ -295,15 +308,15 @@ all_courses_df['if_active_since_June1'] = np.where(all_courses_df.first_created_
                                                    True, False)
 all_courses_df['if_sandbox_course'] = np.where(all_courses_df.Dept=='Sandboxes', 1, 0)
 #all_courses_df['if_default_fa'] = np.where(all_courses_df.num_tot_fa==26, 1, 0)
-all_courses_df['if_default_fa'] = np.where((((all_courses_df.num_files==22) & (all_courses_df.num_assignments==4)) 
-                              | ((all_courses_df.num_files==34) & (all_courses_df.num_assignments==26))), 1, 0)
+all_courses_df['if_default_fa'] = np.where(((all_courses_df.num_files==22) & 
+                                            (all_courses_df.num_assignments==4)), 1, 0)
 
 all_courses_df = all_courses_df[all_courses_df.course_id.notna()].reset_index(drop=True)
 all_courses_df.drop_duplicates(subset=['course_id'], keep='last', inplace=True)
 #all_courses_df.tail()
 
 
-# In[81]:
+# In[32]:
 
 
 all_courses_df['last_update_at'] = all_courses_df['last_update_at'].dt.strftime('%Y-%m-%d')
@@ -311,7 +324,7 @@ all_courses_df['first_created_at'] = all_courses_df['first_created_at'].dt.strft
 #all_courses_df.tail()
 
 
-# In[82]:
+# In[33]:
 
 
 #Exclude the last day's information as that's still incomplete.

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[48]:
 
 
 #import modules
@@ -19,6 +19,8 @@ from canvasapi import Canvas
 
 from datetime import datetime
 
+from time import time
+
 #import plotly.express as px
 
 
@@ -29,7 +31,7 @@ from datetime import datetime
 run_mode = 'dev' #or, 'prod', or 'mig' for when migrating the code
 
 
-# In[3]:
+# In[4]:
 
 
 
@@ -50,7 +52,7 @@ elif run_mode == 'mig':
     out_table = "all_courses3"
 
 
-# In[4]:
+# In[5]:
 
 
 
@@ -71,7 +73,7 @@ API_KEY = cred_json['ACCES_TOKEN']
 API_URL = cred_json['API_URL']#+'/accounts/1'
 
 
-# In[5]:
+# In[6]:
 
 
 # Initialize a new Canvas object
@@ -81,7 +83,7 @@ canvas.__dict__
 
 # ### Get courses running on Canvas -- created via migration or by LT's
 
-# In[22]:
+# In[7]:
 
 
 #Get the LT list from the Excel sheet
@@ -92,7 +94,7 @@ lt_df['Email'] = lt_df.Email.str.lower()
 lt_df.tail()
 
 
-# In[7]:
+# In[8]:
 
 
 '''
@@ -109,7 +111,7 @@ stellar_df['course_id'] = stellar_df['Canvas URL to migrate to'].str.split("/").
 '''
 
 
-# In[26]:
+# In[59]:
 
 
 def get_course_info(course_id):
@@ -117,7 +119,7 @@ def get_course_info(course_id):
     by the course_id, and returns a list of '''
     cutoff_date = datetime.strptime('2020-05-31', '%Y-%m-%d') #by this time most default content was created
     try:
-        c1 = canvas.get_course(course_id)
+        c1 = canvas.get_course(course_id, include='total_students')
 
 
         course_dept = sub_account_dict[c1.account_id]
@@ -125,6 +127,8 @@ def get_course_info(course_id):
         
         course_name = c1.name
         course_state = c1.workflow_state
+        
+        num_students = c1.total_students
 
         files_ = c1.get_files()
         assn_ = c1.get_assignments()
@@ -167,13 +171,13 @@ def get_course_info(course_id):
         fa_c_min = fa_c_times.min() if len(fa_c_times)>0 else fa_c_times_all.min()
 
         return [c1.id, course_dept, parent_account, course_name, course_state, len(file_utimes_all), 
-                len(assn_utimes_all), len(fa_times_all), fa_max, fa_c_min]
+                len(assn_utimes_all), len(fa_times_all), fa_max, fa_c_min, num_students]
     except Exception as e:
         #print(e)
-        return [None, None, None, None, None, None, None, None, None, None]
+        return [None, None, None, None, None, None, None, None, None, None, None]
 
 
-# In[18]:
+# In[60]:
 
 
 #Get a list of all department names by the sub-account id:
@@ -196,7 +200,7 @@ for a_ in accs:
 #sub_account_dict
 
 
-# In[24]:
+# In[61]:
 
 
 #Get a list of all courses:
@@ -228,14 +232,14 @@ filtered_courses_df.to_csv('all_canvas_since_{}.csv'.format(begin_date), index=N
 filtered_courses_df
 
 
-# In[28]:
+# In[62]:
 
 
 #Check that the migration/production/dev is set correctly
 all_course_list_0 = filtered_courses_df.course_id.tolist()
 all_course_list_0_rows = []
 all_course_list_0_cols = ['course_id','Dept', 'parent_account', 'Course_name', 'course_state', 'num_files',
-                          'num_assignments','num_tot_fa','last_update_at','first_created_at']
+                          'num_assignments','num_tot_fa','last_update_at','first_created_at', 'num_students']
 
 if run_mode == 'dev' or run_mode=='mig':
     num_courses = 5
@@ -252,7 +256,7 @@ print(all_course_list_0_df.shape)
 all_course_list_0_df.tail()
 
 
-# In[29]:
+# In[64]:
 
 
 #Check that the migration/production/dev is set correctly
@@ -290,14 +294,14 @@ print(all_lt_courses.shape)
 #all_lt_courses
 
 
-# In[30]:
+# In[65]:
 
 
 all_courses_df = pd.concat([all_course_list_0_df, all_lt_courses], ignore_index=True)
 #all_courses_df
 
 
-# In[31]:
+# In[66]:
 
 
 ts_cutoff_1w = pd.to_datetime('now') - pd.to_timedelta('7days')
@@ -316,7 +320,7 @@ all_courses_df.drop_duplicates(subset=['course_id'], keep='last', inplace=True)
 #all_courses_df.tail()
 
 
-# In[32]:
+# In[67]:
 
 
 all_courses_df['last_update_at'] = all_courses_df['last_update_at'].dt.strftime('%Y-%m-%d')
@@ -324,7 +328,7 @@ all_courses_df['first_created_at'] = all_courses_df['first_created_at'].dt.strft
 #all_courses_df.tail()
 
 
-# In[33]:
+# In[68]:
 
 
 #Exclude the last day's information as that's still incomplete.

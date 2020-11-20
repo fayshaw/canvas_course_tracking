@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[48]:
+# In[1]:
 
 
 #import modules
@@ -31,7 +31,7 @@ from time import time
 run_mode = 'dev' #or, 'prod', or 'mig' for when migrating the code
 
 
-# In[4]:
+# In[3]:
 
 
 
@@ -52,7 +52,7 @@ elif run_mode == 'mig':
     out_table = "all_courses3"
 
 
-# In[5]:
+# In[4]:
 
 
 
@@ -73,7 +73,7 @@ API_KEY = cred_json['ACCES_TOKEN']
 API_URL = cred_json['API_URL']#+'/accounts/1'
 
 
-# In[6]:
+# In[5]:
 
 
 # Initialize a new Canvas object
@@ -83,7 +83,7 @@ canvas.__dict__
 
 # ### Get courses running on Canvas -- created via migration or by LT's
 
-# In[7]:
+# In[6]:
 
 
 #Get the LT list from the Excel sheet
@@ -111,7 +111,7 @@ stellar_df['course_id'] = stellar_df['Canvas URL to migrate to'].str.split("/").
 '''
 
 
-# In[59]:
+# In[7]:
 
 
 def get_course_info(course_id):
@@ -122,6 +122,7 @@ def get_course_info(course_id):
         c1 = canvas.get_course(course_id, include='total_students')
 
 
+        enrollment_term = term_dict[c1.enrollment_term_id]
         course_dept = sub_account_dict[c1.account_id]
         parent_account = parent_account_dict[c1.account_id]
         
@@ -170,14 +171,15 @@ def get_course_info(course_id):
         fa_max = fa_times.max() if len(fa_times)>0 else fa_times_all.max()
         fa_c_min = fa_c_times.min() if len(fa_c_times)>0 else fa_c_times_all.min()
 
-        return [c1.id, course_dept, parent_account, course_name, course_state, len(file_utimes_all), 
+        return [c1.id, course_dept, enrollment_term, parent_account, course_name, course_state,
+                len(file_utimes_all), 
                 len(assn_utimes_all), len(fa_times_all), fa_max, fa_c_min, num_students]
     except Exception as e:
         #print(e)
-        return [None, None, None, None, None, None, None, None, None, None, None]
+        return [None, None, None, None, None, None, None, None, None, None, None, None]
 
 
-# In[60]:
+# In[8]:
 
 
 #Get a list of all department names by the sub-account id:
@@ -196,11 +198,16 @@ for a_ in accs:
         pass
 
     
+#Get course terms associated with the account and create a dictionary of the term names:
+term_dict ={}
+for term_ in acc.get_enrollment_terms():
+    term_dict[term_.id] = term_.name
+    
 #parent_account_dict
 #sub_account_dict
 
 
-# In[61]:
+# In[9]:
 
 
 #Get a list of all courses:
@@ -232,14 +239,14 @@ filtered_courses_df.to_csv('all_canvas_since_{}.csv'.format(begin_date), index=N
 filtered_courses_df
 
 
-# In[62]:
+# In[10]:
 
 
 #Check that the migration/production/dev is set correctly
 all_course_list_0 = filtered_courses_df.course_id.tolist()
 all_course_list_0_rows = []
-all_course_list_0_cols = ['course_id','Dept', 'parent_account', 'Course_name', 'course_state', 'num_files',
-                          'num_assignments','num_tot_fa','last_update_at','first_created_at', 'num_students']
+all_course_list_0_cols = ['course_id','Dept', 'enrollment_term','parent_account', 'Course_name', 'course_state', 
+            'num_files','num_assignments','num_tot_fa','last_update_at','first_created_at', 'num_students']
 
 if run_mode == 'dev' or run_mode=='mig':
     num_courses = 5
@@ -256,7 +263,7 @@ print(all_course_list_0_df.shape)
 all_course_list_0_df.tail()
 
 
-# In[64]:
+# In[11]:
 
 
 #Check that the migration/production/dev is set correctly
@@ -294,14 +301,14 @@ print(all_lt_courses.shape)
 #all_lt_courses
 
 
-# In[65]:
+# In[12]:
 
 
 all_courses_df = pd.concat([all_course_list_0_df, all_lt_courses], ignore_index=True)
 #all_courses_df
 
 
-# In[66]:
+# In[13]:
 
 
 ts_cutoff_1w = pd.to_datetime('now') - pd.to_timedelta('7days')
@@ -320,7 +327,7 @@ all_courses_df.drop_duplicates(subset=['course_id'], keep='last', inplace=True)
 #all_courses_df.tail()
 
 
-# In[67]:
+# In[14]:
 
 
 all_courses_df['last_update_at'] = all_courses_df['last_update_at'].dt.strftime('%Y-%m-%d')
@@ -328,7 +335,7 @@ all_courses_df['first_created_at'] = all_courses_df['first_created_at'].dt.strft
 #all_courses_df.tail()
 
 
-# In[68]:
+# In[15]:
 
 
 #Exclude the last day's information as that's still incomplete.

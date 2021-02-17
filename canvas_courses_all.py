@@ -14,13 +14,14 @@ from google.cloud import bigquery,storage
 from google.oauth2 import service_account
 
 import gspread
-import json
+import json, os
 from canvasapi import Canvas
 
 from datetime import datetime
 
 from time import time
 
+from params import basedir, run_mode
 #import plotly.express as px
 
 
@@ -28,7 +29,8 @@ from time import time
 
 
 #choose credential file paths and other possible changes:
-run_mode = 'dev' #or, 'prod', or 'mig' for when migrating the code
+#run_mode = 'dev' #or, 'prod', or 'mig' for when migrating the code
+print(run_mode)
 
 
 # In[3]:
@@ -129,8 +131,24 @@ def get_course_info(course_id):
         course_name = c1.name
         course_state = c1.workflow_state
         
+        
         num_students = c1.total_students
-
+        
+        #Find out if the course is public or not:
+        is_public = c1.is_public
+        public_syllabus = c1.public_syllabus
+        public_syllabus_to_auth = c1.public_syllabus_to_auth
+        is_public_to_auth_users = c1.is_public_to_auth_users
+        
+        if is_public == 1:
+            course_visibility = 'public'
+        elif is_public == 0 and is_public_to_auth_users == 1:
+            course_visibility = 'institute'
+        elif is_public == 0 and is_public_to_auth_users == 0:
+            course_visibility = 'not_public_to_auth_users'
+        else:
+            course_visibility = 'unknown'
+            
         files_ = c1.get_files()
         assn_ = c1.get_assignments()
         #Get the file updated times
@@ -173,10 +191,11 @@ def get_course_info(course_id):
 
         return [c1.id, course_dept, enrollment_term, parent_account, course_name, course_state,
                 len(file_utimes_all), 
-                len(assn_utimes_all), len(fa_times_all), fa_max, fa_c_min, num_students]
+                len(assn_utimes_all), len(fa_times_all), fa_max, fa_c_min, num_students, is_public, public_syllabus,
+               public_syllabus_to_auth, is_public_to_auth_users, course_visibility]
     except Exception as e:
         #print(e)
-        return [None, None, None, None, None, None, None, None, None, None, None, None]
+        return [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
 
 
 # In[8]:
@@ -246,7 +265,8 @@ filtered_courses_df
 all_course_list_0 = filtered_courses_df.course_id.tolist()
 all_course_list_0_rows = []
 all_course_list_0_cols = ['course_id','Dept', 'enrollment_term','parent_account', 'Course_name', 'course_state', 
-            'num_files','num_assignments','num_tot_fa','last_update_at','first_created_at', 'num_students']
+            'num_files','num_assignments','num_tot_fa','last_update_at','first_created_at', 'num_students',
+            'is_public', 'public_syllabus', 'public_syllabus_to_auth', 'is_public_to_auth_users', 'course_visibility']
 
 if run_mode == 'dev' or run_mode=='mig':
     num_courses = 5

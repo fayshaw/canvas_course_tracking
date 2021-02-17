@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[21]:
 
 
 #import modules
@@ -25,7 +25,7 @@ from params import basedir, run_mode
 #import plotly.express as px
 
 
-# In[2]:
+# In[22]:
 
 
 #choose credential file paths and other possible changes:
@@ -33,41 +33,38 @@ from params import basedir, run_mode
 print(run_mode)
 
 
-# In[3]:
+# In[23]:
 
 
 
 if run_mode == 'dev':
-    cred_file_path = "."
     out_table = "all_courses3"
+    
 elif run_mode == 'prod':
-    cred_file_path = "/home/aroy/projects/canvas_data_portal/canvas_course_tracking"
     out_table = "all_courses4"
 
 elif run_mode == 'prod_home':
-    cred_file_path = "."
     out_table = "all_courses4"
 
     
 elif run_mode == 'mig':
-    cred_file_path = "/home/aroy/projects/canvas_data_portal/canvas_course_tracking"
     out_table = "all_courses3"
 
 
-# In[4]:
+# In[24]:
 
 
 
 #get Google cloud credentials
 project_id = 'canvas-portal-data-custom'
-cred_file = '{}/canvas-portal-data-custom-6e244db3b826.json'.format(cred_file_path)
+cred_file = '{}/canvas-portal-data-custom-6e244db3b826.json'.format(basedir)
 data_dl = 'data'
 scopes = [ "https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file",
             "https://spreadsheets.google.com/auth/spreadsheets"]
 credentials = service_account.Credentials.from_service_account_file(cred_file,)
 
 #get Canvas credentials
-cred_file2 = '{}/instances.json'.format(cred_file_path)
+cred_file2 = '{}/instances.json'.format(basedir)
 with open(cred_file2,'r') as cred2:
     cred_json = json.load(cred2)
 
@@ -75,7 +72,7 @@ API_KEY = cred_json['ACCES_TOKEN']
 API_URL = cred_json['API_URL']#+'/accounts/1'
 
 
-# In[5]:
+# In[25]:
 
 
 # Initialize a new Canvas object
@@ -85,12 +82,12 @@ canvas.__dict__
 
 # ### Get courses running on Canvas -- created via migration or by LT's
 
-# In[6]:
+# In[26]:
 
 
 #Get the LT list from the Excel sheet
 lt_df_cols = ['School', 'Dept_num', 'Dept_name', 'Name', 'Email']
-lt_df = pd.read_excel('{}/Learning_Technologists_updating.xlsx'.format(cred_file_path))
+lt_df = pd.read_excel('{}/Learning_Technologists_updating.xlsx'.format(basedir))
 lt_df.columns = lt_df_cols
 lt_df['Email'] = lt_df.Email.str.lower()
 lt_df.tail()

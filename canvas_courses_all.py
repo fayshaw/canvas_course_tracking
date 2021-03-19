@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[21]:
+# In[2]:
 
 
 #import modules
@@ -10,7 +10,7 @@ import numpy as np
 import requests
 
 from pandas.io import gbq
-from google.cloud import bigquery,storage
+#from google.cloud import bigquery,storage
 from google.oauth2 import service_account
 
 import gspread
@@ -25,7 +25,7 @@ from params import basedir, run_mode
 #import plotly.express as px
 
 
-# In[22]:
+# In[3]:
 
 
 #choose credential file paths and other possible changes:
@@ -33,7 +33,7 @@ from params import basedir, run_mode
 print(run_mode)
 
 
-# In[23]:
+# In[4]:
 
 
 
@@ -51,7 +51,7 @@ elif run_mode == 'mig':
     out_table = "all_courses3"
 
 
-# In[24]:
+# In[5]:
 
 
 
@@ -72,7 +72,7 @@ API_KEY = cred_json['ACCES_TOKEN']
 API_URL = cred_json['API_URL']#+'/accounts/1'
 
 
-# In[25]:
+# In[6]:
 
 
 # Initialize a new Canvas object
@@ -82,15 +82,16 @@ canvas.__dict__
 
 # ### Get courses running on Canvas -- created via migration or by LT's
 
-# In[26]:
+# In[15]:
 
 
 #Get the LT list from the Excel sheet
-lt_df_cols = ['School', 'Dept_num', 'Dept_name', 'Name', 'Email']
-lt_df = pd.read_excel('{}/Learning_Technologists_updating.xlsx'.format(basedir))
-lt_df.columns = lt_df_cols
+lt_df_new_cols = ['School', 'Dept_num', 'Dept_name', 'Name', 'Email']
+lt_existing_cols = ['School', 'Assigned to:', 'Department name', 'Name', 'Contact Email']
+lt_df = pd.read_excel('{}/Learning_Technologists_updating.xlsx'.format(basedir), engine="openpyxl")
+lt_df = lt_df[lt_existing_cols]
+lt_df.columns = lt_df_new_cols
 lt_df['Email'] = lt_df.Email.str.lower()
-lt_df.tail()
 
 
 # In[8]:
@@ -110,7 +111,7 @@ stellar_df['course_id'] = stellar_df['Canvas URL to migrate to'].str.split("/").
 '''
 
 
-# In[7]:
+# In[56]:
 
 
 def get_course_info(course_id):
@@ -145,7 +146,43 @@ def get_course_info(course_id):
             course_visibility = 'not_public_to_auth_users'
         else:
             course_visibility = 'unknown'
+        
+        #get discussion_topics, pages, quizzes, assignment_groups, modules, and module items
+        list_dis_topics = c1.get_discussion_topics()
+        list_pages = c1.get_pages()
+        list_quizzes = c1.get_quizzes()
+        list_assignment_groups = c1.get_assignment_groups()
+
+        def count_stuff(list_items, if_published=None):
+            num_stuff = 0
+            for item in list_items:
+                if if_published != None:
+                    if item.published == if_published:
+                        num_stuff += 1
+
+                elif if_published == None:
+                    num_stuff += 1
+
+
+            return num_stuff
+
+        num_published_dis_topics = count_stuff(list_dis_topics, if_published=True)
+        num_published_pages = count_stuff(list_pages, if_published=True)
+        num_published_quizzes = count_stuff(list_quizzes, if_published=True)
+        num_assignment_groups = count_stuff(list_assignment_groups, if_published=None) 
+        #Note: different if_published kwd
+
+
+        modules_list = c1.get_modules()
+        num_modules = 0
+        num_module_items = 0
+
+        for d_ in modules_list:
+            num_modules += 1
+            num_module_items += d_.items_count
+
             
+        #get files and assignments
         files_ = c1.get_files()
         assn_ = c1.get_assignments()
         #Get the file updated times
@@ -187,15 +224,17 @@ def get_course_info(course_id):
         fa_c_min = fa_c_times.min() if len(fa_c_times)>0 else fa_c_times_all.min()
 
         return [c1.id, course_dept, enrollment_term, parent_account, course_name, course_state,
-                len(file_utimes_all), 
-                len(assn_utimes_all), len(fa_times_all), fa_max, fa_c_min, num_students, is_public, public_syllabus,
-               public_syllabus_to_auth, is_public_to_auth_users, course_visibility]
+                len(file_utimes_all), len(assn_utimes_all), len(fa_times_all), 
+                fa_max, fa_c_min, num_students, is_public, public_syllabus,
+               public_syllabus_to_auth, is_public_to_auth_users, course_visibility, num_published_dis_topics,
+                num_published_pages, num_published_quizzes, num_assignment_groups,num_modules, num_module_items]
     except Exception as e:
         #print(e)
-        return [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+        return [None, None, None, None, None, None, None, None, None, None, None, None,
+                None, None, None, None, None, None, None, None, None, None, None]
 
 
-# In[8]:
+# In[57]:
 
 
 #Get a list of all department names by the sub-account id:
@@ -223,7 +262,7 @@ for term_ in acc.get_enrollment_terms():
 #sub_account_dict
 
 
-# In[9]:
+# In[58]:
 
 
 #Get a list of all courses:
@@ -255,7 +294,7 @@ filtered_courses_df.to_csv('all_canvas_since_{}.csv'.format(begin_date), index=N
 filtered_courses_df
 
 
-# In[10]:
+# In[59]:
 
 
 #Check that the migration/production/dev is set correctly
@@ -263,7 +302,9 @@ all_course_list_0 = filtered_courses_df.course_id.tolist()
 all_course_list_0_rows = []
 all_course_list_0_cols = ['course_id','Dept', 'enrollment_term','parent_account', 'Course_name', 'course_state', 
             'num_files','num_assignments','num_tot_fa','last_update_at','first_created_at', 'num_students',
-            'is_public', 'public_syllabus', 'public_syllabus_to_auth', 'is_public_to_auth_users', 'course_visibility']
+            'is_public', 'public_syllabus', 'public_syllabus_to_auth', 'is_public_to_auth_users', 'course_visibility',
+            'num_published_dis_topics','num_published_pages', 'num_published_quizzes', 'num_assignment_groups',
+                          'num_modules', 'num_module_items']
 
 if run_mode == 'dev' or run_mode=='mig':
     num_courses = 5
@@ -280,7 +321,7 @@ print(all_course_list_0_df.shape)
 all_course_list_0_df.tail()
 
 
-# In[11]:
+# In[60]:
 
 
 #Check that the migration/production/dev is set correctly
@@ -318,14 +359,14 @@ print(all_lt_courses.shape)
 #all_lt_courses
 
 
-# In[12]:
+# In[61]:
 
 
 all_courses_df = pd.concat([all_course_list_0_df, all_lt_courses], ignore_index=True)
 #all_courses_df
 
 
-# In[13]:
+# In[62]:
 
 
 ts_cutoff_1w = pd.to_datetime('now') - pd.to_timedelta('7days')
@@ -344,7 +385,7 @@ all_courses_df.drop_duplicates(subset=['course_id'], keep='last', inplace=True)
 #all_courses_df.tail()
 
 
-# In[14]:
+# In[63]:
 
 
 all_courses_df['last_update_at'] = all_courses_df['last_update_at'].dt.strftime('%Y-%m-%d')
@@ -352,7 +393,7 @@ all_courses_df['first_created_at'] = all_courses_df['first_created_at'].dt.strft
 #all_courses_df.tail()
 
 
-# In[15]:
+# In[64]:
 
 
 #Exclude the last day's information as that's still incomplete.
